@@ -1,3 +1,4 @@
+/* eslint react/no-unescaped-entities */
 'use client'
 import Image, { StaticImageData } from 'next/image'
 import mypic from '../public/images/mypic.jpeg'
@@ -14,7 +15,7 @@ interface IWork {
   image: StaticImageData
   project: string;
   Description: string;
-  pictures: string[] | undefined;
+  pictures: string[] | StaticImageData[];
   link?: string;
   technologies: string[]
 } 
@@ -234,8 +235,8 @@ export default function Home() {
             }
             <div className='flex gap-2 bg-white items-center rounded-[20px] py-2 px-[10px] m-auto'>
               {
-                work && work?.pictures?.map((i) =>
-                <div className='bg-[#E0E2E4] h-[8px] w-[8px] rounded-full' key={i}></div>
+                work && work?.pictures?.map((i, j) =>
+                <div className='bg-[#E0E2E4] h-[8px] w-[8px] rounded-full' key={j}></div>
               )}
             </div>
             {
@@ -256,3 +257,5 @@ export default function Home() {
   </main>
   )
 }
+
+
