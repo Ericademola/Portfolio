@@ -38,7 +38,7 @@ export const works = [
     project: 'PUSH IT',
     Description: 'Point of sales web application for selling at shops and warehouses.',
     pictures: [PushItHome, PushItContent, PushItCashier],
-    // link: 'https://super-haupia-7b5270.netlify.app',
+    link: 'https://push-it-pos-front-dev-xmjf.2.us-1.fl0.io',
     technologies: ['React', 'Axios', 'prime react', 'styled-components', 'typescript']
   },
   {
