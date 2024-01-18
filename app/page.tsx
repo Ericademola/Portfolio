@@ -102,7 +102,7 @@ export default function Home() {
     <div className='mt-2.5 text-center'>
       <h2 className='text-[rgb(45, 6, 3)] font-semibold text-[1rem]' id="stack">STACK</h2>
       <div className='flex justify-evenly pt-5'>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>TYPESCRIPT.JS</p>
+        <p className='text-[rgb(0, 0, 2)] font-bold'>TYPESCRIPT</p>
         <p className='text-[rgb(0, 0, 2)] font-bold'>JAVASCRIPT</p>
         <p className='text-[rgb(0, 0, 2)] font-bold'>REACT.JS</p>
         <p className='text-[rgb(0, 0, 2)] font-bold'>ANGULAR</p>
@@ -112,6 +112,7 @@ export default function Home() {
         <p className='text-[rgb(0, 0, 2)] font-bold'>IONIC</p>
         <p className='text-[rgb(0, 0, 2)] font-bold'>ZUSTAND</p>
         <p className='text-[rgb(0, 0, 2)] font-bold'>AXIOS</p>
+        <p className='text-[rgb(0, 0, 2)] font-bold'>REACT QUERY</p>
       </div>
     </div>
 
