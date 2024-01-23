@@ -62,7 +62,7 @@ export const works = [
     project: 'Kuditip',
     Description: 'We building tipping service app for receiving gratification from supporters.',
     pictures: [kuditip3, kuditip1, kuditip],
-    link: 'https://tipping-service-8i8yt1vfs-ericademola.vercel.app/',
+    link: 'https://tipping-service.vercel.app/',
     technologies: ['React', 'javascript']
   },
   {
