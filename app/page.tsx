@@ -134,7 +134,7 @@ export default function Home() {
             <div className='pl-1'>
               <h3 className='text-[#000] dark:text-white'>{work.project}</h3>
               <p className='text-[gray]'>{work.Description}</p>
-              {work.link && <a href={`${work.link}`} className='text-[gray]'>Visit site</a>}
+              {work.link && <a href={`${work.link}`} target="_blank" rel="noopener noreferrer" className='text-[gray]'>Visit site</a>}
             </div>
           </div> 
         )}
