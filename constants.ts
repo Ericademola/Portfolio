@@ -36,9 +36,15 @@ export const works = [
   {
     image: PushItHome,
     project: 'PUSH IT',
-    Description: 'Point of sales web application for selling at shops and warehouses.',
+    Description: `Point of sales web application for selling at shops and warehouses. \n
+    Password for the cashier: use 1234. \n
+    To login as a super admin: \n
+    - Email: choicestplace@gmail.com \n
+    - Password: Lekens0001. \n
+    - Secret code: POS-CHOICEST
+    `,
     pictures: [PushItHome, PushItContent, PushItCashier],
-    link: 'https://push-it-pos-front-dev-xmjf.2.us-1.fl0.io',
+    link: 'poschoice.ng',
     technologies: ['React', 'Axios', 'prime react', 'styled-components', 'typescript']
   },
   {

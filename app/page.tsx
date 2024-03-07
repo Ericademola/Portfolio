@@ -133,7 +133,13 @@ export default function Home() {
             />
             <div className='pl-1'>
               <h3 className='text-[#000] dark:text-white'>{work.project}</h3>
-              <p className='text-[gray]'>{work.Description}</p>
+              <p className='text-[gray]' style={{ whiteSpace: "pre-line", lineHeight: "15px" }}>
+                {
+                  work.Description.length > 100
+                  ? work.Description.slice(0, 100) + "..."
+                  : work.Description
+                } 
+              </p>
               {work.link && <a href={`${work.link}`} target="_blank" rel="noopener noreferrer" className='text-[gray]'>Visit site</a>}
             </div>
           </div> 
@@ -201,11 +207,18 @@ export default function Home() {
     </section>
     
 
-    <div className={isShowModel ? 'fixed w-full h-full bg-[#000] bg-opacity-20 top-0 left-0 pt-[10%]' : 'fixed w-full h-full bg-[#000] bg-opacity-20 top-0 left-0 pt-[15%] hidden'}>
+    <div className={isShowModel ? 'fixed w-full h-full bg-[#000] bg-opacity-20 top-0 left-0 pt-[5%]' : 'fixed w-full h-full bg-[#000] bg-opacity-20 top-0 left-0 pt-[15%] hidden'}>
       <div className="bg-white rounded-lg shadow-lg p-3 w-1/2 m-auto">
-        <h2 className="text-2xl leading-0 mb-4 text-gray-500">{work?.project}</h2>
-        <p className="text-gray-500">{work?.Description}</p>
-        <p className="text-gray-500">technologies: 
+        <h2 className="text-2xl leading-0 mb-4 text-blue-500">{work?.project}</h2>
+        <div className='max-h-[192px] min-h-[50px] overflow-y-auto'>
+          <p className='text-gray-500' style={{ whiteSpace: "pre-line", lineHeight: "15px" }}>
+            {work?.Description}
+          </p>
+        </div>
+        <p className='text-[black] pt-2'>
+          Project link: <i className='text-[blue]'>{work?.link}</i>
+        </p>
+        <p className="text-gray-500">Technologies: 
           { 
             work && work?.technologies?.map((technology, i) =>
             <i  className='pl-2' key={i}>
