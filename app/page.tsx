@@ -1,4 +1,3 @@
-/* eslint react/no-unescaped-entities */
 'use client'
 import Image, { StaticImageData } from 'next/image'
 import mypic from '../public/images/mypic.jpeg'
