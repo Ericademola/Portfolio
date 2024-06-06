@@ -6,7 +6,7 @@ import mypic from '../public/images/mypic.jpeg'
 import EmailIcon from '@/public/EmailIcon'
 import LinkedinIcon from '@/public/LinkedinIcon'
 import XIcon from '@/public/XIcon'
-import {works} from '../constants'
+import {works, skills} from '../constants'
 import { useRef, useState } from 'react'
 import ArrowWithTailNext from '@/public/ArrowWithTailNext'
 import ArrowWithTailPrev from '@/public/ArrowWithTailPrev'
@@ -67,60 +67,104 @@ export default function Home() {
   };
 
   return (
-  <main className='p-5 dark:bg-slate-800 relative'>
-     {/* fixed inset-0 flex items-center justify-center z-50'> */}
-    <nav className='flex gap-5 items-center mb-20'>
-      <Image src={mypic} alt=''
-        className='w-[50px] h-[50px] rounded-full'/>
-      <h2>Adeyemi Eric Ademola</h2>
-      <div className='flex gap-5 ml-auto'>
-        {/* <a href="#connect" className='no-underline decoration-[#50d71e] "bg-black hover:bg-rgb(0, 102, 255)'><h5>Connect</h5></a> */}
-        {/* <a href="#projects" className='no-underline decoration-[#50d71e] "bg-black hover:bg-rgb(0, 102, 255)'><h5>Projects</h5></a> */}
-        <a href="#stack" className='no-underline decoration-[#50d71e] "bg-black hover:bg-rgb(0, 102, 255)'><h5>Stack & Projects</h5></a>
-      </div>
-    </nav>
-    <div className='m-auto w-3/4 text-left rounded-[10px] bg-[#2bafe734] shadow-lg shadow-black-500/40'>
-      <div className="leading-5 p-5 text-black">
-        <h1 className='mb-2.5 font-extrabold'>Hi, I'm Ademola.</h1>
-        <p className='text-[14px] font-normal text-[gray]'>A skilled and creative frontend developer with years of experience in web development. Known for designing and implementing user-friendly, responsive, and visually appealing websites and web applications. Proficient in a range of frontend technologies and frameworks. Passionate about creating seamless user experiences and staying updated on the latest industry trends..</p>
-      </div>
+  <main className='dark:bg-slate-800 relative'>
+    <div className='h-[100vh] bg-[url(../public/images/nightsky.jpg)]'>
+      <nav className='flex gap-5 items-center mb-10 p-5'>
+        <Image src={mypic} alt=''
+          className='w-[40px] h-[40px] rounded-full'/>
+        <h2 className='font-[cursive] text-[30px]'>&lt; A E A / &gt;</h2>
+        <div className='flex gap-5 ml-auto'>
+          {/* <a href="#connect" className='no-underline decoration-[#50d71e] "bg-black hover:bg-rgb(0, 102, 255)'><h5>Connect</h5></a> */}
+          {/* <a href="#projects" className='no-underline decoration-[#50d71e] "bg-black hover:bg-rgb(0, 102, 255)'><h5>Projects</h5></a> */}
+          <a href="#stack" className='no-underline decoration-[#50d71e] "bg-black hover:bg-rgb(0, 102, 255)'><h5>Stack & Projects</h5></a>
+        </div>
+      </nav>
+      {/* <div className='m-auto w-3/4 text-left rounded-[10px] bg-[#2bafe734] shadow-lg shadow-black-500/40'> */}
+
+          <div className="text-center">
+            <Image src={mypic} alt=''
+            className='m-auto w-[150px] h-[150px] rounded-ss-[400px] rounded-se-[0px] rounded-ee-[400px] rounded-es-[400px]'/>
+            <h3 className='mb-2 font-extrabold'>Hello there!, I'm</h3>
+            <h1 className='text-[4rem]'>Adeyemi Ademola</h1>
+            <p className='text-[1.5rem] '><span className='font-bold'>Passionate Developer</span> who loves creating new projects and learning new technologies</p>
+          </div>
+
+          <section className='pt-5 justify-around flex items-center' id="#connect">
+            <div>
+              <button className='m-auto px-5 py-4 border-4 text-2xl  font-semibold border-[#243c5a] rounded'>RESUME</button>
+            </div>
+
+            <div className='p-5 flex gap-4 mt-2'>
+              <a 
+              href="https://www.linkedin.com/in/adeyemi-ademola-7982a1192/"
+              target='_blank' 
+              className='no-underline font-medium text-[14px]'
+              >
+                <div className='bg-white bordmer-[1px] border-[blue] px-2 py-2 rounded-full w-fit m-auto'>
+                  <LinkedinIcon/>
+                </div>
+                LinkedIn
+              </a>
+              <a 
+              href="https://twitter.com/Adeyemi50273182" 
+              target='_blank' 
+              className='no-underline font-medium text-[14px]'
+              >
+                <div className='bg-white border-[1px] px-2 py-2 rounded-full w-fit  m-auto'>
+                  <XIcon/>
+                </div>
+                Twitter
+              </a>
+              <a 
+              href="" 
+              // ademolaadeyemieric@gmail.com
+              className='no-underline font-medium text-[14px]'
+              >
+                <div className='bg-[#fff] border-[1px] border-[red] px-2 py-2 rounded-full w-fit m-auto'>
+                  <EmailIcon />
+                </div>
+                Email
+              </a>
+            </div>
+          </section>
+
+          <div className=''>
+          <div className='flex gnap-2 items-center h-fit overflow-x-auto' style={modalPic} ref={picWrapper}>
+            { 
+              skills && skills.map((skill, i) =>
+                <div className='flex gap items-center w-[200px]' key={i}>
+                  <Image 
+                  src={skill.logo} 
+                  alt='logo'
+                  className='w-[40px] h-[40px] rounded-full'/>
+                  <span className='text-2xl font-semibold'>
+                    {skill.name}
+                  </span>
+                </div>
+              )
+            }
+          </div>
+        </div>
+
+
+       
     </div>
 
-    {/* <section className='w-fit m-auto text-center grid grid-cols-2 gap-y-8 gap-x-10 my-20'> */}
-    <section className='w-fit m-auto text-center my-20'>
-      {
-        reviews && reviews.map((review, i) => 
-        <div className='w-[400px] text-center' key={i}>   
-          <p className='text-[13px]'>{review.comment}</p>
-          <h6 className='text-[blue]'>{review.name} — {review.organization}</h6>
-        </div>)
-      }
-    </section>
+    <div className='h-[100vh] w-fit m-auto'>
+      <h1 className='text-[100px] font-bold text-[green] pl-4' >ABOUT ME</h1>
 
-    <hr className='border-black my-5'/>
-
-    <div className='mt-2.5 text-center'>
-      <h2 className='text-[rgb(45, 6, 3)] font-semibold text-[1rem]' id="stack">STACK</h2>
-      <div className='flex justify-evenly pt-5'>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>TYPESCRIPT</p>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>JAVASCRIPT</p>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>REACT.JS</p>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>ANGULAR</p>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>NEXT.JS</p>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>TAILWINDCSS</p>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>ANT DESIGN</p>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>IONIC</p>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>ZUSTAND</p>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>AXIOS</p>
-        <p className='text-[rgb(0, 0, 2)] font-bold'>REACT QUERY</p>
+      <div className='flex items-center justify-center'>
+        <div className='w-[50%]'>
+          <p className='text-[14px] font-normal text-[white]'>A skilled and creative frontend developer with years of experience in web development. Known for designing and implementing user-friendly, responsive, and visually appealing websites and web applications. Proficient in a range of frontend technologies and frameworks. Passionate about creating seamless user experiences and staying updated on the latest industry trends..</p>
+        </div>
+        <Image src="/images/cartondev.png" alt="" width={500} height={200} />
       </div>
+
     </div>
 
-    <hr className='border-black my-3'/>
-    
     <div className='items-center mt-10'id="#projects">
-      <h2 className='text-center font-semibold text-[1.5rem]'>Projects</h2>
-      <div className='gap-x-10 gap-y-6 mt-7 grid grid-cols-3'>
+      <h2 className='text-center font-semibold text-[20px]'>Projects</h2>
+      <div className='gap-x-10 gap-y-6 mt-7 grid grid-cols-2'>
         { 
           works && works.map((work, i) =>  
           <div 
@@ -146,65 +190,35 @@ export default function Home() {
         )}
       </div>
     </div>
-   
-      <hr className='border-black my-5'/>
 
-    <div className='my-14 w-full flex justify-around'>
-      <div className='w-2/5 leading-10'>
-        <h1 className='text-lg font-semibold' id="#connect">So why work with me?</h1>
-        <p className='text-sm leading-6'>
-          With a keen interest in computer science, my unique strength lies in problem-solving. I excel at dissecting unconventional and imaginative concepts, devising strategies to bring them to fruition.
-          After years of operating independently, I possess agility and the ability to swiftly adapt. I've successfully introduced expansive, internationally recognized projects, each with the imperative need for seamless operation from day one, which underscores my appreciation for reliability and performance.                  
-          Moreover, I pride myself on being an effective communicator and collaborator. I recognize that the 'how' isn't always the primary concern; what truly matters is a job well executed and delivered punctually
-        </p>
-      </div>
-      <div>
-        <Image src={mypic} alt=''
-          className='w-[320px] h-[310px] mt-2 rounded-ss-[600px] rounded-se-[0px] rounded-ee-[600px] rounded-es-[600px]'/>
-      </div>
-    </div>
-        
-    <hr className='border-black my-5'/>
-      
-    <section className='pt-5 justify-around flex' id="#connect">
-      <div className='w-4/6'>
-        <h2 className='font-semibold text-[1.5rem]'>Let's Chat</h2>
-        <p className='text-[14px] font-medium'>Need an experienced frontend developer to help out? <br/>Send me an email to discuss in more detail. Alternatively connect with me elsewhere on the web →</p>
-      </div>
+    <hr className='border-[white] my-[50px]'/>
 
-      <div className='p-5 flex gap-4 mt-2'>
-        <a 
-        href="https://www.linkedin.com/in/adeyemi-ademola-7982a1192/"
-        target='_blank' 
-        className='no-underline font-medium text-[14px]'
-        >
-          <div className='bg-white bordmer-[1px] border-[blue] px-2 py-2 rounded-full w-fit m-auto'>
-            <LinkedinIcon/>
+      <footer className='h-[80vh]'>
+
+      <div className=' my-1s4 w-full flex justify-around'>
+
+            <div className='w-2/3 leading-10 rounded-full text-center bg-[purple] py-12 px-14'>
+            <Image src="/images/cartondev.png" alt="quote photo" width={100} height={100} className='rounded-full bg-slate-800 border border-[purple] m-auto mt-[-100px]' />
+              <p className='text-sm leading-6'>
+                With a keen interest in computer science, my unique strength lies in problem-solving. I excel at dissecting unconventional and imaginative concepts, devising strategies to bring them to fruition.
+                After years of operating independently, I possess agility and the ability to swiftly adapt. I've successfully introduced expansive, internationally recognized projects, each with the imperative need for seamless operation from day one, which underscores my appreciation for reliability and performance.                  
+                Moreover, I pride myself on being an effective communicator and collaborator. I recognize that the 'how' isn't always the primary concern; what truly matters is a job well executed and delivered punctually
+              </p>
+              <h1 className='text-lg font-semibold'>john</h1>
+              <h1 className='text-lg font-semibold'>facebook</h1>
+
+            </div>
+
           </div>
-          LinkedIn
-        </a>
-        <a 
-        href="https://twitter.com/Adeyemi50273182" 
-        target='_blank' 
-        className='no-underline font-medium text-[14px]'
-        >
-          <div className='bg-white border-[1px] px-2 py-2 rounded-full w-fit  m-auto'>
-            <XIcon/>
+              
+          <hr className='border-[white] my-5'/>
+            
+          <div className='text-center pb-4'>
+            <p className='text-[14px] font-medium'>Made with &#128151; by Adeyemi using NextJs</p>
           </div>
-          Twitter
-        </a>
-        <a 
-        href="" 
-        // ademolaadeyemieric@gmail.com
-        className='no-underline font-medium text-[14px]'
-        >
-          <div className='bg-[#fff] border-[1px] border-[red] px-2 py-2 rounded-full w-fit m-auto'>
-            <EmailIcon />
-          </div>
-          Email
-        </a>
-      </div>
-    </section>
+      </footer>
+
+
     
 
     <div className={isShowModel ? 'fixed w-full h-full bg-[#000] bg-opacity-20 top-0 left-0 pt-[5%]' : 'fixed w-full h-full bg-[#000] bg-opacity-20 top-0 left-0 pt-[15%] hidden'}>

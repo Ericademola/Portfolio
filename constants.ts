@@ -16,6 +16,19 @@ import kuditip1 from 'public/images/kuditip1.png'
 import kuditip3 from 'public/images/kuditip3.png'
 import ClabboxHome from 'public/images/ClabboxHome.jpeg'
 
+import angular_logo from 'public/images/angular_logo.png'
+import ant_design_logo from 'public/images/ant_design_logo.jpeg'
+import axios_logo from 'public/images/axios_logo.png'
+import ionic_logo from 'public/images/ionic_logo.png'
+import nextjs_logo from 'public/images/nextjs_logo.png'
+import react_logo from 'public/images/react_logo.png'
+import react_query_logo from 'public/images/react_query_logo.png'
+import tailwindcss_logo from 'public/images/tailwindcss_logo.png'
+import typescript_logo from 'public/images/typescript_logo.png'
+import javascript_logo from 'public/images/javascript_logo.png'
+import zustand_logo from 'public/images/zustand_logo.jpeg'
+
+
 export const works = [
   {
     image: AvayeFavourite,
@@ -102,4 +115,51 @@ export const works = [
     // link: '#',
     technologies: ['CSS', 'HTML', 'javascript']
   },
+]
+
+export const skills = [
+  {
+    logo: typescript_logo,
+    name: "TYPESCRIPT"
+  },
+  // {
+  //   logo: javascript_logo,
+  //   name: "JAVASCRIPT"
+  // },
+  {
+    logo: react_logo,
+    name: "REACT.JS"
+  },
+  // {
+  //   logo: angular_logo,
+  //   name: "ANGULAR"
+  // },
+  {
+    logo: nextjs_logo,
+    name: "NEXT.JS"
+  },
+  // {
+  //   logo: tailwindcss_logo,
+  //   name: "TAILWINDCSS"
+  // },
+  {
+    logo: ant_design_logo,
+    name: "ANT DESIGN"
+  },
+  // {
+  //   logo: ionic_logo,
+  //   name: "IONIC"
+  // },
+  // {
+  //   logo: zustand_logo,
+  //   name: "ZUSTAND"
+  // },
+  {
+    logo: axios_logo,
+    name: "AXIOS"
+  },
+  // {
+  //   logo: react_query_logo,
+  //   name: "REACT QUERY"
+  // }
 ]
