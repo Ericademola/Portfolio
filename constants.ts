@@ -122,44 +122,44 @@ export const skills = [
     logo: typescript_logo,
     name: "TYPESCRIPT"
   },
-  // {
-  //   logo: javascript_logo,
-  //   name: "JAVASCRIPT"
-  // },
+  {
+    logo: javascript_logo,
+    name: "JAVASCRIPT"
+  },
   {
     logo: react_logo,
     name: "REACT.JS"
   },
-  // {
-  //   logo: angular_logo,
-  //   name: "ANGULAR"
-  // },
+  {
+    logo: angular_logo,
+    name: "ANGULAR"
+  },
   {
     logo: nextjs_logo,
     name: "NEXT.JS"
   },
-  // {
-  //   logo: tailwindcss_logo,
-  //   name: "TAILWINDCSS"
-  // },
+  {
+    logo: tailwindcss_logo,
+    name: "TAILWINDCSS"
+  },
   {
     logo: ant_design_logo,
     name: "ANT DESIGN"
   },
-  // {
-  //   logo: ionic_logo,
-  //   name: "IONIC"
-  // },
-  // {
-  //   logo: zustand_logo,
-  //   name: "ZUSTAND"
-  // },
+  {
+    logo: ionic_logo,
+    name: "IONIC"
+  },
+  {
+    logo: zustand_logo,
+    name: "ZUSTAND"
+  },
   {
     logo: axios_logo,
     name: "AXIOS"
   },
-  // {
-  //   logo: react_query_logo,
-  //   name: "REACT QUERY"
-  // }
+  {
+    logo: react_query_logo,
+    name: "REACT QUERY"
+  }
 ]
