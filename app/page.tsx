@@ -118,11 +118,11 @@ export default function Home() {
         <div className="text-center">
           <Image src={mypic} alt=''
           className='m-auto w-[150px] h-[150px] rounded-ss-[400px] rounded-se-[0px] rounded-ee-[400px] rounded-es-[400px]'/>
-          <h3 className='mb-2 font-extrabold'>Hello there!, I'm</h3>
+          <h3 className='mb-2 font-extrabold text-[white]'>Hello there!, I'm</h3>
           <h1 className='text-[1.5rem] md:text-[2rem] lg:text-[4rem] font-bold text-[white]'>
             <span className='border-b-[5px] border-[blue]'>{typedWord}</span><span className='text-[blue]'>|</span>
           </h1>
-          <p className='text-[1.5rem] '><span className='font-bold'>Passionate Developer</span> who loves creating new projects and learning new technologies</p>
+          <p className='text-[1.5rem] text-[white]'><span className='font-bold'>Passionate Developer</span> who loves creating new projects and learning new technologies</p>
         </div>
 
         <section className='pt-5 justify-around flex items-center' id="#connect">
