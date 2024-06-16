@@ -9,8 +9,8 @@ import { useRef, useState } from 'react'
 import ArrowWithTailNext from '@/public/ArrowWithTailNext'
 import ArrowWithTailPrev from '@/public/ArrowWithTailPrev'
 import { useMediaQuery } from 'react-responsive'
-import Hamburger from '@/public/Hamburger'
-import ArrowDownV from '@/public/ArrowDownV'
+// import Hamburger from '@/public/Hamburger'
+// import ArrowDownV from '@/public/ArrowDownV'
 import StackSlider from '@/components/StackSlider';
 
 interface IWork {
@@ -68,9 +68,9 @@ export default function Home() {
     // setLeftArrow(true);
   };
 
-  const handleMenu = () => {
-    setIsShowMenu((prev) => !prev)
-  }
+  // const handleMenu = () => {
+  //   setIsShowMenu((prev) => !prev)
+  // }
 
   return (
   <main className='dark:bg-slate-800 relative overflow-y-hidden'>
