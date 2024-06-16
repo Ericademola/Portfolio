@@ -78,7 +78,7 @@ export default function Home() {
 
   return (
   <main className='dark:bg-slate-800 relative overflow-x-hidden'>
-    <div className='h-[100vh] bg-[url(../public/images/nightsky.jpg)] flex justify-between flex-col'>
+    <div className='min-h-[100vh] bg-[url(../public/images/nightsky.jpg)] flex justify-between flex-col'>
       <nav className='flex gap-5 items-center p-5 text-[white]'>
         <Image src={mypic} alt=''
           className='w-[40px] h-[40px] rounded-full'/>
@@ -120,7 +120,7 @@ export default function Home() {
           className='m-auto w-[150px] h-[150px] rounded-ss-[400px] rounded-se-[0px] rounded-ee-[400px] rounded-es-[400px]'/>
           <h3 className='mb-2 font-extrabold text-[white]'>Hello there!, I'm</h3>
           <h1 className='text-[1.5rem] md:text-[2rem] lg:text-[4rem] font-bold text-[white]'>
-            <span className='border-b-[5px] border-[blue]'>{typedWord}</span><span className='text-[blue]'>|</span>
+            <span className='border-b-[5px] border-[blue]'>{typedWord}</span><span className='text-[blue]'>/</span>
           </h1>
           <p className='text-[1.5rem] text-[white]'><span className='font-bold'>Passionate Developer</span> who loves creating new projects and learning new technologies</p>
         </div>
