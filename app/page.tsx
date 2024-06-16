@@ -1,17 +1,17 @@
 'use client'
 import Image, { StaticImageData } from 'next/image'
 import mypic from '../public/images/mypic.jpeg'
-
 import EmailIcon from '@/public/EmailIcon'
 import LinkedinIcon from '@/public/LinkedinIcon'
 import XIcon from '@/public/XIcon'
-import {works, skills} from '../constants'
+import {works} from '../constants'
 import { useRef, useState } from 'react'
 import ArrowWithTailNext from '@/public/ArrowWithTailNext'
 import ArrowWithTailPrev from '@/public/ArrowWithTailPrev'
 import { useMediaQuery } from 'react-responsive'
 import Hamburger from '@/public/Hamburger'
 import ArrowDownV from '@/public/ArrowDownV'
+import StackSlider from '@/components/StackSlider';
 
 interface IWork {
   image: StaticImageData
@@ -73,13 +73,13 @@ export default function Home() {
   }
 
   return (
-  <main className='dark:bg-slate-800 relative'>
-    <div className='h-[100vh] bg-[url(../public/images/nightsky.jpg)]'>
-      <nav className='flex gap-5 items-center mb-10 p-5'>
+  <main className='dark:bg-slate-800 relative overflow-y-hidden'>
+    <div className='h-[100vh] bg-[url(../public/images/nightsky.jpg)] flex justify-between flex-col'>
+      <nav className='flex gap-5 items-center p-5'>
         <Image src={mypic} alt=''
           className='w-[40px] h-[40px] rounded-full'/>
         <h2 className='font-[cursive] text-[30px]'>&lt; A E A / &gt;</h2>
-
+{/* 
         <div className='ml-auto flex gap-2 items-center'>
           <div className='flex gap-5 ml-auto max-sm:flex-col max-sm:hidden'>
             <a href="" className='no-underline decoration-[white] "bg-black hover:bg-rgb(0, 102, 255) hover:underline'><h5>Resume</h5></a>
@@ -107,80 +107,64 @@ export default function Home() {
             }
 
           </div>
-        </div>
+        </div> */}
         
       </nav>
-      {/* <div className='m-auto w-3/4 text-left rounded-[10px] bg-[#2bafe734] shadow-lg shadow-black-500/40'> */}
+      <div>
+        <div className="text-center">
+          <Image src={mypic} alt=''
+          className='m-auto w-[150px] h-[150px] rounded-ss-[400px] rounded-se-[0px] rounded-ee-[400px] rounded-es-[400px]'/>
+          <h3 className='mb-2 font-extrabold'>Hello there!, I'm</h3>
+          <h1 className='text-[1.5rem] md:text-[2rem] lg:text-[4rem] font-bold'>Adeyemi Ademola</h1>
+          <p className='text-[1.5rem] '><span className='font-bold'>Passionate Developer</span> who loves creating new projects and learning new technologies</p>
+        </div>
 
-          <div className="text-center">
-            <Image src={mypic} alt=''
-            className='m-auto w-[150px] h-[150px] rounded-ss-[400px] rounded-se-[0px] rounded-ee-[400px] rounded-es-[400px]'/>
-            <h3 className='mb-2 font-extrabold'>Hello there!, I'm</h3>
-            <h1 className='text-[1.5rem] md:text-[2rem] lg:text-[4rem] font-bold'>Adeyemi Ademola</h1>
-            <p className='text-[1.5rem] '><span className='font-bold'>Passionate Developer</span> who loves creating new projects and learning new technologies</p>
+        <section className='pt-5 justify-around flex items-center' id="#connect">
+          <div>
+            <a href='' className='m-auto px-5 py-4 border-4 text-2xl  font-semibold border-[#243c5a] rounded'>RESUME</a>
           </div>
 
-          <section className='pt-5 justify-around flex items-center' id="#connect">
-            <div>
-              <a href='' className='m-auto px-5 py-4 border-4 text-2xl  font-semibold border-[#243c5a] rounded'>RESUME</a>
-            </div>
-
-            <div className='p-5 flex gap-4 mt-2'>
-              <a 
-              href="https://www.linkedin.com/in/adeyemiademola/"
-              target='_blank' 
-              className='no-underline font-medium text-[14px]'
-              >
-                <div className='bg-white border-[2px] border-[blue] px-2 py-2 rounded-[5px] w-fit m-auto'>
-                  <LinkedinIcon/>
-                </div>
-                LinkedIn
-              </a>
-              <a 
-              href="https://twitter.com/Adeyemi50273182" 
-              target='_blank' 
-              className='no-underline font-medium text-[14px]'
-              >
-                <div className='bg-white border-[1px] px-2 py-2 rounded-[5px] w-fit  m-auto'>
-                  <XIcon/>
-                </div>
-                Twitter
-              </a>
-              <a 
-              href="" 
-              // ademolaadeyemieric@gmail.com
-              className='no-underline font-medium text-[14px]'
-              >
-                <div className='bg-[#fff] border-[1px] border-[red] px-2 py-2 rounded-[5px] w-fit m-auto'>
-                  <EmailIcon />
-                </div>
-                Email
-              </a>
-            </div>
-          </section>
-            {/* <div className='grid grid-flow-col auto-cols-auto items-center h-fit overflow-x-hidden whitespace-nowrap'>
-              { 
-                skills && skills.map((skill, i) =>
-                  <div className='border-[red] border-[3px] rounded-[5px] ml-2 flex gap-2 items-center w-fit' key={i}>
-                    <Image 
-                    src={skill.logo} 
-                    alt='logo'
-                    className='w-[50px] h-[50px]  rounded-full'/>
-                    <span className='text-2xl font-semibold'>
-                      {skill.name}
-                    </span>
-                  </div>
-                )
-              }
-        </div>  */}
+          <div className='p-5 flex gap-4 mt-2'>
+            <a 
+            href="https://www.linkedin.com/in/adeyemiademola/"
+            target='_blank' 
+            className='no-underline font-medium text-[14px]'
+            >
+              <div className='bg-white border-[2px] border-[blue] px-2 py-2 rounded-[5px] w-fit m-auto'>
+                <LinkedinIcon/>
+              </div>
+              LinkedIn
+            </a>
+            <a 
+            href="https://twitter.com/Adeyemi50273182" 
+            target='_blank' 
+            className='no-underline font-medium text-[14px]'
+            >
+              <div className='bg-white border-[1px] px-2 py-2 rounded-[5px] w-fit  m-auto'>
+                <XIcon/>
+              </div>
+              Twitter
+            </a>
+            <a 
+            href="" 
+            // ademolaadeyemieric@gmail.com
+            className='no-underline font-medium text-[14px]'
+            >
+              <div className='bg-[#fff] border-[1px] border-[red] px-2 py-2 rounded-[5px] w-fit m-auto'>
+                <EmailIcon />
+              </div>
+              Email
+            </a>
+          </div>
+        </section>
+      </div>
+      <StackSlider />
     </div>
 
     <div className='min-h-[100vh] w-fit m-auto bg-[url(../public/images/nightsky.jpg)]'>
       <h1 className='text-[50px] md:text-[100px] lg:text-[125px] leanding-[10px] font-bold text-[white] pl-4' >ABOUT ME</h1>
 
-      {/* <div className='flex items-center justify-center'> */}
       <div className="grid md:grid-cols-2 grid-cols-1 xl:gap-5 items-center w-fit m-auto px-[5%] md:px-[15%]">
-        {/* <div className='w-[50%] bg-[red]'> */}
         <div className="order-2 md:order-1 w-fit">
           <p className='text-[20px] font-normal text-[white]'>
             With a keen interest in computer science, my unique strength lies in problem-solving. 
