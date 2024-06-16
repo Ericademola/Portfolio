@@ -117,6 +117,14 @@ export const works = [
   },
 ]
 
+export const reviews = [
+  {
+    name: 'AMOS OLUSUMI',
+    organization: 'NAIJACODEPADI',
+    comment: `The development process was well thought out — our app has been performant and stable, making it much easier for us to manage with limited resources. I'd definitely recommend working with Adeyemi!`,
+  },
+]
+
 export const skills = [
   {
     logo: typescript_logo,
@@ -161,5 +169,21 @@ export const skills = [
   {
     logo: react_query_logo,
     name: "REACT QUERY"
-  }
+  },
+  {
+    logo: react_query_logo,
+    name: "REACT QUERY"
+  },
+  {
+    logo: react_query_logo,
+    name: "REACT QUERY"
+  },
+  {
+    logo: react_query_logo,
+    name: "REACT QUERY"
+  },
+  {
+    logo: react_query_logo,
+    name: "REACT QUERY"
+  },
 ]

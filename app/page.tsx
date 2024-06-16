@@ -4,16 +4,15 @@ import mypic from '../public/images/mypic.jpeg'
 import EmailIcon from '@/public/EmailIcon'
 import LinkedinIcon from '@/public/LinkedinIcon'
 import XIcon from '@/public/XIcon'
-import {works} from '../constants'
-import { useRef, useState } from 'react'
-import ArrowWithTailNext from '@/public/ArrowWithTailNext'
-import ArrowWithTailPrev from '@/public/ArrowWithTailPrev'
+import {reviews, works} from '../constants'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-// import Hamburger from '@/public/Hamburger'
-// import ArrowDownV from '@/public/ArrowDownV'
+import Hamburger from '@/public/Hamburger'
+import ArrowDownV from '@/public/ArrowDownV'
 import StackSlider from '@/components/StackSlider';
+import Model from '@/components/Model'
 
-interface IWork {
+export interface IWork {
   image: StaticImageData
   project: string;
   Description: string;
@@ -27,59 +26,64 @@ export default function Home() {
   const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
   const [work, setWork] = useState<IWork>();
 
+  const [typedWord, setTypedWord] = useState('');
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const typingSpeed = 150; // milliseconds
+
+  const wordsToType = useMemo(() => [
+    "Adeyemi Eric Ademola", 
+    "A Developer", 
+    "Competitive Programmer"
+  ], []);
+  
+  const typeWriter = useCallback(() => {
+    if (charIndex < wordsToType[wordIndex].length) {
+      setTypedWord(prev => prev + wordsToType[wordIndex][charIndex]);
+      setCharIndex(prev => prev + 1);
+    } else if (wordIndex < wordsToType.length - 1) {
+      setTimeout(() => {
+        setTypedWord('');
+        setCharIndex(0);
+        setWordIndex(prev => prev + 1);
+      }, typingSpeed * 2); // A short pause before starting the next word
+    } else {
+      setTimeout(() => {
+        setTypedWord('');
+        setCharIndex(0);
+        setWordIndex(0);
+      }, typingSpeed * 2); // A short pause before restarting from the first word
+    }
+  }, [wordIndex, charIndex, wordsToType]);
+
+  useEffect(() => {
+    if (wordsToType.length > 0) {
+      const timer = setTimeout(typeWriter, typingSpeed);
+      return () => clearTimeout(timer);
+    }
+  }, [typedWord, wordsToType, typeWriter]);
+
   const isMobile = useMediaQuery({
     query: "(min-width: 640px)",
   });
-
-  const reviews = [
-    {
-      name: 'AMOS OLUSUMI',
-      organization: 'NAIJACODEPADI',
-      comment: `The development process was well thought out — our app has been performant and stable, making it much easier for us to manage with limited resources. I'd definitely recommend working with Adeyemi!`,
-    },
-  ]
 
   const handleProjectDetails = ({work}: {work: IWork}) => {
     setIsShowModel(true);
     setWork(work);
   }
 
-  const modalPic = {
-    overflow: 'hidden',
-    width: '100%',
-}
-
-  const picWrapper = useRef<HTMLDivElement>(null!);
-
-  const sideScroll = (
-    element: HTMLDivElement,
-    speed: number,
-    distance: number,
-    step: number
-    ) => {
-    let scrollAmount = 0;
-    const slideTimer = setInterval(() => {
-      element.scrollLeft += step;
-      scrollAmount += Math.abs(step);
-      if (scrollAmount >= distance) {
-        clearInterval(slideTimer);
-      }
-    }, speed);
-    // setLeftArrow(true);
-  };
-
-  // const handleMenu = () => {
-  //   setIsShowMenu((prev) => !prev)
-  // }
+  const handleMenu = () => {
+    setIsShowMenu((prev) => !prev)
+  }
 
   return (
-  <main className='dark:bg-slate-800 relative overflow-y-hidden'>
+  <main className='dark:bg-slate-800 relative overflow-x-hidden'>
     <div className='h-[100vh] bg-[url(../public/images/nightsky.jpg)] flex justify-between flex-col'>
       <nav className='flex gap-5 items-center p-5'>
         <Image src={mypic} alt=''
           className='w-[40px] h-[40px] rounded-full'/>
         <h2 className='font-[cursive] text-[30px]'>&lt; A E A / &gt;</h2>
-{/* 
+
         <div className='ml-auto flex gap-2 items-center'>
           <div className='flex gap-5 ml-auto max-sm:flex-col max-sm:hidden'>
             <a href="" className='no-underline decoration-[white] "bg-black hover:bg-rgb(0, 102, 255) hover:underline'><h5>Resume</h5></a>
@@ -107,7 +111,7 @@ export default function Home() {
             }
 
           </div>
-        </div> */}
+        </div>
         
       </nav>
       <div>
@@ -115,7 +119,9 @@ export default function Home() {
           <Image src={mypic} alt=''
           className='m-auto w-[150px] h-[150px] rounded-ss-[400px] rounded-se-[0px] rounded-ee-[400px] rounded-es-[400px]'/>
           <h3 className='mb-2 font-extrabold'>Hello there!, I'm</h3>
-          <h1 className='text-[1.5rem] md:text-[2rem] lg:text-[4rem] font-bold'>Adeyemi Ademola</h1>
+          <h1 className='text-[1.5rem] md:text-[2rem] lg:text-[4rem] font-bold'>
+            <span className='border-b-[5px] border-[blue]'>{typedWord}</span><span className='text-[blue]'>|</span>
+          </h1>
           <p className='text-[1.5rem] '><span className='font-bold'>Passionate Developer</span> who loves creating new projects and learning new technologies</p>
         </div>
 
@@ -162,9 +168,8 @@ export default function Home() {
     </div>
 
     <div className='min-h-[100vh] w-fit m-auto bg-[url(../public/images/nightsky.jpg)]'>
-      <h1 className='text-[50px] md:text-[100px] lg:text-[125px] leanding-[10px] font-bold text-[white] pl-4' >ABOUT ME</h1>
-
-      <div className="grid md:grid-cols-2 grid-cols-1 xl:gap-5 items-center w-fit m-auto px-[5%] md:px-[15%]">
+      <h1 className='text-[50px] md:text-[100px] lg:text-[125px] leanding-[10px] font-bold text-[white] pl-4'>ABOUT ME</h1>
+      <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5 items-center w-fit m-auto px-[5%] md:px-[4%]">
         <div className="order-2 md:order-1 w-fit">
           <p className='text-[20px] font-normal text-[white]'>
             With a keen interest in computer science, my unique strength lies in problem-solving. 
@@ -178,8 +183,7 @@ export default function Home() {
             I recognize that the 'how' isn't always the primary concern; what truly matters is a job well executed and delivered punctually.
           </p>
         </div>
-        {/* <div> */}
-        <div className="order-1 md:order-2 mfd:mt-12 h-fitw-fit m-auto">
+        <div className="order-1 md:order-2 h-fit w-fit m-auto animate-bounce">
           <Image src="/images/cartondev.png" alt="" width={`${isMobile ? 500 : 300}`} height={100} />
         </div>
       </div>
@@ -214,7 +218,6 @@ export default function Home() {
         )}
       </div>
       <hr className='border-[white] mt-[50px]'/>
-
     </div>
 
 
@@ -222,88 +225,29 @@ export default function Home() {
 
       <div className=' my-1s4 w-full flex justify-around'>
 
-            <div className='w-2/3 leading-10 rounded-[20px] md:rounded-[25px] lg:rounded-[50px] text-center bg-[purple] py-4 px-4 md:py-8 md:px-8 lg:py-12 lg:px-14'>
-              <Image src="/images/cartondev.png" alt="quote photo" width={100} height={100} className='rounded-full bg-slate-800 border border-[purple] m-auto mt-[-80px]' />
-              <p className='text-sm leading-6'>
-                {reviews[0].comment}
-              </p>
-              <h1 className='text-lg font-semibold'>{reviews[0].name}</h1>
-              <h1 className='text-lg font-semibold'>{reviews[0].organization}</h1>
-            </div>
-
-          </div>
-              
-          <hr className='border-[white] my-5'/>
-            
-          <div className='text-center pb-4'>
-            <p className='text-[14px] font-medium'>Made with &#128151; by Adeyemi using NextJs</p>
-          </div>
-      </footer>
-
-
-    
-
-    <div className={isShowModel ? "fixed w-full h-full bg-[#000] bg-opacity-20 top-0 left-0 md:pt-[5%]" : "hidden"}>
-      <div className="bg-white md:rounded-lg rounded-ee-lg rounded-es-lg shadow-lg p-3 w-full md:w-1/2 md:m-auto">
-        <h2 className="text-2xl leading-0 mb-4 text-blue-500">{work?.project}</h2>
-        <div className='max-h-[192px] min-h-[50px] overflow-y-auto'>
-          <p className='text-gray-500' style={{ whiteSpace: "pre-line", lineHeight: "15px" }}>
-            {work?.Description}
+        <div className='w-2/3 leading-10 rounded-[20px] md:rounded-[25px] lg:rounded-[50px] text-center bg-[purple] py-4 px-4 md:py-8 md:px-8 lg:py-12 lg:px-14'>
+          <Image src="/images/cartondev.png" alt="quote photo" width={100} height={100} className='rounded-full bg-slate-800 border border-[purple] m-auto mt-[-80px]' />
+          <p className='text-sm leading-6'>
+            {reviews[0].comment}
           </p>
+          <h1 className='text-lg font-semibold'>{reviews[0].name}</h1>
+          <h1 className='text-lg font-semibold'>{reviews[0].organization}</h1>
         </div>
-        <p className='text-[black] pt-2'>
-          Project link: <i className='text-[blue]'>{work?.link}</i>
-        </p>
-        <p className="text-gray-500">Technologies: 
-          { 
-            work && work?.technologies?.map((technology, i) =>
-            <i  className='pl-2' key={i}>
-              {technology}{i === work?.technologies.length - 1 ? '.' : ','}
-            </i>
-          )}
-        </p>
-        <div className='bg-[#f1f1f1] p-2'>
-          <div className='flex gap-2' style={modalPic} ref={picWrapper}>
-            { 
-              work && work?.pictures?.map((pic, i) =>
-                <Image src={pic} alt=''
-                  className='w-full w-[100%] h-[150px] object-contain'
-                  key={i}
-                />
-            )}
-          </div>
-          <div className='flex justify-between mt-2'>
-            {
-              work && work?.pictures &&
-              work.pictures.length > 2 &&
-              <span                             
-                onClick={() => {
-                sideScroll(picWrapper.current, 25, 300, -40);
-              }}>
-                <ArrowWithTailPrev/>
-              </span>
-            }
-            <div className='flex gap-2 bg-white items-center rounded-[20px] py-2 px-[10px] m-auto'>
-              {
-                work && work?.pictures?.map((i, j) =>
-                <div className='bg-[#E0E2E4] h-[8px] w-[8px] rounded-full' key={j}></div>
-              )}
-            </div>
-            {
-                work && work?.pictures &&
-                work.pictures.length > 2 &&
-              <span 
-                onClick={() => {
-                  sideScroll(picWrapper.current, 25, 300, +40);
-                  }}>
-                <ArrowWithTailNext/>
-              </span>
-            } 
-          </div>
-        </div>
-        <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded" onClick={() => setIsShowModel(false)}>Close</button>
+
       </div>
+              
+    <hr className='border-[white] my-5'/>
+      
+    <div className='text-center pb-4'>
+      <p className='text-[14px] font-medium'>Made with &#128151; by Adeyemi using NextJs</p>
     </div>
+    </footer>
+
+    {
+      isShowModel &&
+      <Model setIsShowModel={setIsShowModel} work={work}/>
+    }
+
   </main>
   )
 }
