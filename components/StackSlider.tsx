@@ -11,7 +11,7 @@ const StackSlider = () => {
                         src={skill.logo} 
                         alt='logo'
                         className='w-[50px] h-[50px] rounded-full mr-[10px]'/>
-                        <span className='text-2xl font-semibold'>
+                        <span className='text-2xl font-semibold text-[white]'>
                             {skill.name}
                         </span>            
                     </li>
