@@ -7,10 +7,9 @@ import XIcon from '@/public/XIcon'
 import {reviews, works} from '../constants'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import Hamburger from '@/public/Hamburger'
-import ArrowDownV from '@/public/ArrowDownV'
 import StackSlider from '@/components/StackSlider';
 import Model from '@/components/Model'
+import Nav from '@/components/Nav'
 
 export interface IWork {
   image: StaticImageData
@@ -23,7 +22,6 @@ export interface IWork {
 
 export default function Home() {
   const [isShowModel, setIsShowModel] = useState<boolean>(false);
-  const [isShowMenu, setIsShowMenu] = useState<boolean>(false);
   const [work, setWork] = useState<IWork>();
 
   const [typedWord, setTypedWord] = useState('');
@@ -33,8 +31,7 @@ export default function Home() {
 
   const wordsToType = useMemo(() => [
     "Adeyemi Eric Ademola", 
-    "A Developer", 
-    "Competitive Programmer"
+    "A Software Developer",
   ], []);
   
   const typeWriter = useCallback(() => {
@@ -72,62 +69,24 @@ export default function Home() {
     setWork(work);
   }
 
-  const handleMenu = () => {
-    setIsShowMenu((prev) => !prev)
-  }
-
   return (
   <main className='dark:bg-slate-800 relative overflow-x-hidden'>
     <div className='min-h-[100vh] bg-[url(../public/images/nightsky.jpg)] flex justify-between flex-col'>
-      <nav className='flex gap-5 items-center p-5 text-[white]'>
-        <Image src={mypic} alt=''
-          className='w-[40px] h-[40px] rounded-full'/>
-        <h2 className='font-[cursive] text-[30px]'>&lt; A E A / &gt;</h2>
-
-        <div className='ml-auto flex gap-2 items-center'>
-          <div className='text-[white] flex gap-5 ml-auto max-sm:flex-col max-sm:hidden'>
-            <a href="" className='no-underline decoration-[white] "bg-black hover:bg-rgb(0, 102, 255) hover:underline'><h5>Resume</h5></a>
-            <a href="#projects" className='no-underline decoration-[white] "bg-black hover:bg-rgb(0, 102, 255) hover:underline'><h5>Projects</h5></a>
-          </div>
-          {
-            !isMobile && isShowMenu &&
-            <div className='text-[white] flex gap ml-auto max-sm:flex-col md:hidden absolute top-14 right-2 border-[white] border-[2px] rounded p-2'>
-              <a href="" className='no-underline decoration-[white] "bg-black hover:bg-rgb(0, 102, 255) hover:underline'><h5>Resume</h5></a>
-              <a href="#projects" className='no-underline decoration-[white] "bg-black hover:bg-rgb(0, 102, 255) hover:underline'><h5>Projects</h5></a>
-            </div>
-          }
-
-          <div className='ml-auto sm:hidden'>
-            { !isShowMenu &&
-              <span onClick={handleMenu}>
-                <Hamburger />
-              </span>
-            }
-
-            { isShowMenu &&
-              <span onClick={handleMenu}>
-                <ArrowDownV />
-              </span>
-            }
-
-          </div>
-        </div>
-        
-      </nav>
+      <Nav />
       <div>
         <div className="text-center">
           <Image src={mypic} alt=''
           className='m-auto w-[150px] h-[150px] rounded-ss-[400px] rounded-se-[0px] rounded-ee-[400px] rounded-es-[400px]'/>
           <h3 className='mb-2 font-extrabold text-[white]'>Hello there!, I'm</h3>
           <h1 className='text-[1.5rem] md:text-[2rem] lg:text-[4rem] font-bold text-[white]'>
-            <span className='border-b-[5px] border-[blue]'>{typedWord}</span><span className='text-[blue]'>/</span>
+            <span className='border-b-[4px] border-[blue]'>{typedWord}</span><span className='text-[blue]'>/</span>
           </h1>
           <p className='text-[1.5rem] text-[white]'><span className='font-bold'>Passionate Developer</span> who loves creating new projects and learning new technologies</p>
         </div>
 
         <section className='pt-5 justify-around flex items-center' id="#connect">
           <div>
-            <a href='' className='m-auto px-5 py-4 border-4 text-2xl text-[white] font-semibold border-[#243c5a] rounded'>RESUME</a>
+            <a href='https://www.cakeresume.com/s--YVVLxMd653WV6--xgGjYHg--/ademola-adeyemi' className='m-auto px-5 py-4 border-4 text-2xl text-[white] font-semibold border-[#243c5a] rounded'>RESUME</a>
           </div>
 
           <div className='p-5 flex gap-4 mt-2 text-[white]'>
@@ -190,8 +149,8 @@ export default function Home() {
 
     </div>
 
-    <div className='items-center pt-10 bg-[url(../public/images/nightsky.jpg)]' id="#projects">
-      <h2 className='text-center font-semibold text-[50px]'>Projects</h2>
+    <div className='items-center pt-10 bg-[url(../public/images/nightsky.jpg)]' id="projects">
+      <h2 className='text-center font-semibold text-[50px] text-[white]'>Projects</h2>
       <div className='gap-x-10 gap-y-6 mt-7 grid grid-cols-1 md:grid-cols-2'>
         { 
           works && works.map((work, i) =>  

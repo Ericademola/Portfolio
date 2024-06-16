@@ -48,7 +48,7 @@ export const works = [
   },
   {
     image: PushItHome,
-    project: 'PUSH IT',
+    project: 'POSCHOICE',
     Description: `Point of sales web application for selling at shops and warehouses. \n
     Password for the cashier: use 1234. \n
     To login as a super admin: \n
@@ -171,19 +171,7 @@ export const skills = [
     name: "REACT QUERY"
   },
   {
-    logo: react_query_logo,
-    name: "REACT QUERY"
-  },
-  {
-    logo: react_query_logo,
-    name: "REACT QUERY"
-  },
-  {
-    logo: react_query_logo,
-    name: "REACT QUERY"
-  },
-  {
-    logo: react_query_logo,
-    name: "REACT QUERY"
+    logo: typescript_logo,
+    name: "TYPESCRIPT"
   },
 ]

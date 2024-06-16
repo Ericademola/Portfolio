@@ -39,15 +39,16 @@ const Model = ({setIsShowModel, work}: {setIsShowModel: (value: boolean) => void
                     </p>
                 </div>
                 <p className='text-[black] pt-2'>
-                    Project link: <i className='text-[blue]'>{work?.link}</i>
+                    Project link: <a href={work?.link} className='text-[blue]'>{work?.link}</a>
                 </p>
                 <p className="text-gray-500">Technologies: 
                     { 
-                    work && work?.technologies?.map((technology, i) =>
-                    <i  className='pl-2' key={i}>
-                        {technology}{i === work?.technologies.length - 1 ? '.' : ','}
-                    </i>
-                    )}
+                        work && work?.technologies?.map((technology, i) =>
+                            <i  className='pl-2' key={i}>
+                                {technology}{i === work?.technologies.length - 1 ? '.' : ','}
+                            </i>
+                        )
+                    }
                 </p>
                 <div className='bg-[#f1f1f1] p-2'>
                     <div className='flex gap-2' style={modalPic} ref={picWrapper}>
@@ -62,7 +63,7 @@ const Model = ({setIsShowModel, work}: {setIsShowModel: (value: boolean) => void
                     <div className='flex justify-between mt-2'>
                         {
                             work && work?.pictures &&
-                            work.pictures.length > 2 &&
+                            work.pictures.length > 1 &&
                             <span                             
                             onClick={() => {
                             sideScroll(picWrapper.current, 25, 300, -40);
@@ -79,7 +80,7 @@ const Model = ({setIsShowModel, work}: {setIsShowModel: (value: boolean) => void
                     </div>
                     {
                         work && work?.pictures &&
-                        work.pictures.length > 2 &&
+                        work.pictures.length > 1 &&
                         <span 
                             onClick={() => {
                                 sideScroll(picWrapper.current, 25, 300, +40);
