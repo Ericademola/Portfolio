@@ -139,7 +139,7 @@ export default function Home() {
             I recognize that the 'how' isn't always the primary concern; what truly matters is a job well executed and delivered punctually.
           </p>
         </div>
-        <div className="order-1 md:order-2 h-fit w-fit m-auto animate-bounce">
+        <div className="animate-[moveDiagonally_5s_ease-in-out_infinite] order-1 md:order-2 h-fit w-fit m-auto">
           <Image src="/images/cartondev.png" alt="" width={`${isMobile ? 500 : 300}`} height={100} />
         </div>
       </div>
@@ -151,7 +151,7 @@ export default function Home() {
         { 
           works && works.map((work, i) =>  
           <div 
-            className='w-[90%] m-auto pointer-cursor hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] hover:w-full rounded-b-lg pointer-events-auto' 
+            className='w-[95%] m-auto pointer-cursor hover:bg-gradient-to-b from-[rgba(225,200,0,0.1)] hover:w-full rounded-b-lg pointer-events-auto' 
             key={i}
           >
             <Image src={work.image} alt=''
