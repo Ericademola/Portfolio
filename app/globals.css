@@ -23,5 +23,45 @@ body {
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)
+  );
 }
+
+
+/* @property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherit: false;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.card::before, .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: conic-gradient(
+    0deg,
+    #0ae8f073,
+    #0af0a39a,
+    #c6f00a9d
+    #0af0a39a,
+    #0ae8f073,
+  );
+  border-radius: inherit;
+  animation: rotation 20s linear infinite;
+}
+
+.card::after {
+  filter: blur(3.5rem);
+}
+
+@keyframes rotation {
+  0% { --gradient-angle: 0deg; }
+  100% { --gradient-angle: 360deg; }
+} */

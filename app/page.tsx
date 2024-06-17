@@ -23,7 +23,6 @@ export interface IWork {
 export default function Home() {
   const [isShowModel, setIsShowModel] = useState<boolean>(false);
   const [work, setWork] = useState<IWork>();
-
   const [typedWord, setTypedWord] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -35,7 +34,7 @@ export default function Home() {
   ], []);
   
   const typeWriter = useCallback(() => {
-    if (charIndex < wordsToType[wordIndex].length) {
+    if (charIndex < wordsToType[wordIndex]?.length) {
       setTypedWord(prev => prev + wordsToType[wordIndex][charIndex]);
       setCharIndex(prev => prev + 1);
     } else if (wordIndex < wordsToType.length - 1) {
@@ -110,9 +109,7 @@ export default function Home() {
               </div>
               Twitter
             </a>
-            <a 
-            href="" 
-            // ademolaadeyemieric@gmail.com
+            <a href="mailto:ademolaadeyemieric@gmail.com"
             className='no-underline font-medium text-[14px]'
             >
               <div className='bg-[#fff] border-[1px] border-[red] px-2 py-2 rounded-[5px] w-fit m-auto'>
@@ -148,7 +145,6 @@ export default function Home() {
       </div>
 
     </div>
-
     <div className='items-center pt-10 bg-[url(../public/images/nightsky.jpg)]' id="projects">
       <h2 className='text-center font-semibold text-[50px] text-[white]'>Projects</h2>
       <div className='gap-x-10 gap-y-6 mt-7 grid grid-cols-1 md:grid-cols-2'>
