@@ -158,9 +158,9 @@ export default function Home() {
               className='w-full min-w-[50%] h-[150px] rounded-lg hover:rounded-none object-contain cursor-pointer'
               onClick={() => handleProjectDetails({ work })}
             />
-            <div className='pl-1'>
+            <div className='pl-1 '>
               <h3 className='text-[#000] dark:text-white'>{work.project}</h3>
-              <p className='text-[gray]' style={{ whiteSpace: "pre-line", lineHeight: "15px" }}>
+              <p className='text-[gray] leading-6' style={{ whiteSpace: "pre-line", lineHeight: "15px" }}>
                 {
                   work.Description.length > 100
                   ? work.Description.slice(0, 100) + "..."

@@ -1,5 +1,8 @@
 import microsoft from 'public/images/microsoft.png'
-import AvayeFavourite from 'public/images/AvayeFavourite.png'
+import AvayeDashboard from 'public/images/AvayeDashboard.png'
+import AvayeExplore from 'public/images/AvayeExplore.png'
+import AvayeHomePage from 'public/images/AvayeHomePage.png'
+import AvayeProfile from 'public/images/AvayeProfile.png'
 import AvayeStorefrontDetails from 'public/images/AvayeStorefrontDetails.png'
 import shareAmSignup from 'public/images/shareAmSignup.png'
 import shareAmLanding from 'public/images/shareAmLanding.png'
@@ -31,20 +34,20 @@ import zustand_logo from 'public/images/zustand_logo.jpeg'
 
 export const works = [
   {
-    image: AvayeFavourite,
+    image: AvayeHomePage,
     project: 'Real Estate',
-    Description: 'Home platform for homeowners, short-let hosts, occupants, & service providers to manage properties, payments, and more.',
-    pictures: [AvayeFavourite],
-    link: 'https://avaye.africa/',
-    technologies: ['nextJs', 'Axios', 'Ant Design', 'Tailwindcss', 'typescript', 'Zustand']
-  },
-  {
-    image: AvayeStorefrontDetails,
-    project: 'Avaye Real Estate App',
-    Description: 'Home platform for homeowners, short-let hosts, occupants, & service providers to manage properties, payments, and more.',
-    pictures: [AvayeStorefrontDetails, AvayeStorefrontGrid, AvayeStorefrontList, AvayeStorefrontList, AvayeStorefrontList],
-    link: 'https://dev-avaye-web-b9240a823474.herokuapp.com/storefront',
-    technologies: ['nextJs', 'Axios', 'Ant Design', 'Tailwindcss', 'typescript', 'Zustand']
+    Description: `
+      A platform for homeowners, guests, and other stakeholders in the real estate and hospitality industry. 
+      The platform allows users to browse, book, and manage properties, as well as interact with other stakeholders.
+      Additionally, it provides features for payment processing, messaging, and more. 
+      the platform is designed to be user-friendly and easy to navigate, with a clean and modern interface. 
+      The website is responsive and works well on both desktop and mobile devices.
+      The project covers various platforms, including a mobile app, a web app, and a website for the company's management.
+    `,
+    pictures: [AvayeStorefrontDetails, AvayeExplore, AvayeProfile, AvayeHomePage, AvayeDashboard, AvayeStorefrontGrid, AvayeStorefrontList],
+    // link: 'https://avaye.africa/',
+    link: 'https://dev-avaye-site-ba8166f5a23f.herokuapp.com/',
+    technologies: ['nextJs', 'Axios', 'Ant Design', 'Tailwindcss', 'typescript', 'Zustand', 'Shadcn UI'],
   },
   {
     image: PushItHome,
