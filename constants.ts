@@ -10,6 +10,9 @@ import AvayeStorefrontGrid from 'public/images/AvayeStorefrontGrid.png'
 import airbnbHome from 'public/images/airbnbHome.png'
 import airbnbPage from 'public/images/airbnbPage.png'
 import paga from 'public/images/paga.png'
+import akada1 from 'public/images/akada1.png'
+import akada2 from 'public/images/akada2.png'
+import akadahome from 'public/images/akadahome.png'
 import AvayeStorefrontList from 'public/images/AvayeStorefrontList.png'
 import PushItHome from 'public/images/PushItHome.png'
 import PushItContent from 'public/images/PushItContent.png'
@@ -45,9 +48,28 @@ export const works = [
       The project covers various platforms, including a mobile app, a web app, and a website for the company's management.
     `,
     pictures: [AvayeStorefrontDetails, AvayeExplore, AvayeProfile, AvayeHomePage, AvayeDashboard, AvayeStorefrontGrid, AvayeStorefrontList],
-    // link: 'https://avaye.africa/',
-    link: 'https://dev-avaye-site-ba8166f5a23f.herokuapp.com/',
+    link: 'https://avaye.africa/',
+    // link: 'https://dev-avaye-site-ba8166f5a23f.herokuapp.com/',
     technologies: ['nextJs', 'Axios', 'Ant Design', 'Tailwindcss', 'typescript', 'Zustand', 'Shadcn UI'],
+  },
+  {
+    image: akadahome,
+    project: 'School Management System',
+    Description: `
+      Personalised Dashboard: A central hub for students to access important information, such as upcoming deadlines, announcements, and personalised notifications like exam results.
+      Course Information: Detailed course outlines, syllabi, and learning materials.
+      Academic Records: Access to grades, transcripts, and academic history.
+      Financial Information: Information about fees, payments, scholarships and a payment solicitation feature that sends a payment link to ask for support with fees
+      Calendar and Timetable: A visual calendar to view class schedules, assignments, and important dates.
+      Online Learning Management System (LMS): A platform for delivering online courses, submitting assignments, and taking quizzes.
+      Library Services: Access to digital library resources, e-books, and research databases.
+      Career Services: Job postings, resume builder, and career counselling resources. ( for university students)
+      Community Forums: A space for students to discuss academic topics, share experiences, and form study groups. ( for university students )
+      Feedback and Survey Tools: Channels for students to provide feedback on courses, faculty, and services. 
+    `,
+    pictures: [akada1, akadahome, akada2],
+    link: 'https://system.akada.africa',
+    technologies: ['Bootstrap', 'Axios', 'prime react', 'styled-components', 'typescript'],
   },
   {
     image: PushItHome,
@@ -60,7 +82,7 @@ export const works = [
     - Secret code: POS-CHOICEST
     `,
     pictures: [PushItHome, PushItContent, PushItCashier],
-    link: 'poschoice.ng',
+    link: 'https://www.poschoice.ng/',
     technologies: ['React', 'Axios', 'prime react', 'styled-components', 'typescript']
   },
   {
@@ -95,13 +117,6 @@ export const works = [
     link: 'https://airbnb-clone-sooty-two.vercel.app/',
     technologies: ['React', 'typescript']
   },
-  // {
-  //   image: Zcoin,
-  //   project: 'Kuditip',
-  //   Description: 'We building tipping service app for receiving gratification from supporters.',
-  //   pictures: [],
-  //   link: 'https://super-haupia-7b5270.netlify.app'
-  // },
   {
     image: paga,
     project: 'Paga Website Redesign',
@@ -122,8 +137,8 @@ export const works = [
 
 export const reviews = [
   {
-    name: 'AMOS OLUSUMI',
-    organization: 'NAIJACODEPADI',
+    name: 'FOLA OLAJIDE',
+    organization: 'CODEPADI',
     comment: `The development process was well thought out — our app has been performant and stable, making it much easier for us to manage with limited resources. I'd definitely recommend working with Adeyemi!`,
   },
 ]
