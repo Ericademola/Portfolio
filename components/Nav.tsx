@@ -71,7 +71,6 @@ const Nav = () => {
 
   return (
     <nav className="flex items-center p-5 text-white relative">
-      <Image src={mypic} alt="Profile" className="w-10 h-10 rounded-full" />
       <h2 className="font-[cursive] text-2xl">&lt; A E A / &gt;</h2>
 
       <div className="ml-auto flex items-center gap-4">

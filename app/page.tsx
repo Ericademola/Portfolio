@@ -78,53 +78,63 @@ export default function Home() {
     <div className='min-h-[100vh] bg-[url(../public/images/nightsky.jpg)] flex justify-between flex-col'>
       <Nav />
       <div>
-        <div className="text-center">
-          <Image src={mypic} alt=''
-          className='m-auto w-[150px] h-[150px] rounded-ss-[400px] rounded-se-[0px] rounded-ee-[400px] rounded-es-[400px]'/>
-          <h3 className='mb-2 font-extrabold text-[white]'>Hello there!, I'm</h3>
-          <h1 className='text-[1.5rem] md:text-[2rem] lg:text-[4rem] font-bold text-[white]'>
-            <span className='border-b-[4px] border-[blue]'>{typedWord}</span><span className='text-[blue]'>/</span>
-          </h1>
-          <p className='text-[1.5rem] text-[white]'><span className='font-bold'>Passionate Developer</span> who loves creating new projects and learning new technologies</p>
+
+        <div className='flex flex-col-reverse md:flex-row justify-between items-center'>
+
+          <div className='w-full md:w-[50%] md:pl-4 pl-0 mt-12 md:mt-0'>
+            <div className='max-md:text-center'>
+              <h3 className='mb-2 font-extrabold text-[white]'>Hello there!, I'm</h3>
+              <h1 className='text-[1.5rem] md:text-[2rem] lg:text-[4rem] font-bold text-[white]'>
+                <span className='border-b-[4px] border-[blue]'>{typedWord}</span><span className='text-[blue]'>/</span>
+              </h1>
+              <p className='text-[1.5rem] text-[white]'><span className='font-bold'>Passionate Developer</span> who loves creating new projects and learning new technologies</p>
+            </div>
+            <section className='pt-5 justify-around flex items-center' id="#connect">
+              <div>
+                <a href='https://docs.google.com/document/d/1fYQR1V3ZiHF0sgxrq5OShiLa1XOmU0V2ZbpEjmRtKd8/edit?tab=t.0' className='m-auto px-5 py-4 border-4 text-2xl text-[white] font-semibold border-[#243c5a] rounded'>RESUME</a>
+                {/* <a href='https://www.cakeresume.com/s--YVVLxMd653WV6--xgGjYHg--/ademola-adeyemi' className='m-auto px-5 py-4 border-4 text-2xl text-[white] font-semibold border-[#243c5a] rounded'>RESUME</a> */}
+              </div>
+
+              <div className='p-5 flex gap-4 mt-2 text-[white]'>
+                <a 
+                href="https://www.linkedin.com/in/adeyemiademola/"
+                target='_blank' 
+                className='no-underline font-medium text-[14px]'
+                >
+                  <div className='bg-white border-[2px] border-[blue] px-2 py-2 rounded-[5px] w-fit m-auto'>
+                    <LinkedinIcon />
+                  </div>
+                  LinkedIn
+                </a>
+                <a 
+                href="https://twitter.com/Adeyemi50273182" 
+                target='_blank' 
+                className='no-underline font-medium text-[14px]'
+                >
+                  <div className='bg-white border-[1px] px-2 py-2 rounded-[5px] w-fit  m-auto'>
+                    <XIcon />
+                  </div>
+                  Twitter
+                </a>
+                <a href="mailto:ademolaadeyemieric@gmail.com"
+                className='no-underline font-medium text-[14px]'
+                >
+                  <div className='bg-[#fff] border-[1px] border-[red] px-2 py-2 rounded-[5px] w-fit m-auto'>
+                    <EmailIcon />
+                  </div>
+                  Email
+                </a>
+              </div>
+            </section>
+          </div>
+
+          <div className="w-full md:w-[50%]">
+            <Image src={mypic} alt='' 
+            className='m-auto w-[150px] h-[150px] md:w-[450px] md:h-[450px] rounded-ss-[400px] rounded-se-[0px] rounded-ee-[400px] rounded-es-[400px] object-cover'/>
+          </div>
+           
         </div>
 
-        <section className='pt-5 justify-around flex items-center' id="#connect">
-          <div>
-            <a href='https://docs.google.com/document/d/1fYQR1V3ZiHF0sgxrq5OShiLa1XOmU0V2ZbpEjmRtKd8/edit?tab=t.0' className='m-auto px-5 py-4 border-4 text-2xl text-[white] font-semibold border-[#243c5a] rounded'>RESUME</a>
-            {/* <a href='https://www.cakeresume.com/s--YVVLxMd653WV6--xgGjYHg--/ademola-adeyemi' className='m-auto px-5 py-4 border-4 text-2xl text-[white] font-semibold border-[#243c5a] rounded'>RESUME</a> */}
-          </div>
-
-          <div className='p-5 flex gap-4 mt-2 text-[white]'>
-            <a 
-            href="https://www.linkedin.com/in/adeyemiademola/"
-            target='_blank' 
-            className='no-underline font-medium text-[14px]'
-            >
-              <div className='bg-white border-[2px] border-[blue] px-2 py-2 rounded-[5px] w-fit m-auto'>
-                <LinkedinIcon />
-              </div>
-              LinkedIn
-            </a>
-            <a 
-            href="https://twitter.com/Adeyemi50273182" 
-            target='_blank' 
-            className='no-underline font-medium text-[14px]'
-            >
-              <div className='bg-white border-[1px] px-2 py-2 rounded-[5px] w-fit  m-auto'>
-                <XIcon />
-              </div>
-              Twitter
-            </a>
-            <a href="mailto:ademolaadeyemieric@gmail.com"
-            className='no-underline font-medium text-[14px]'
-            >
-              <div className='bg-[#fff] border-[1px] border-[red] px-2 py-2 rounded-[5px] w-fit m-auto'>
-                <EmailIcon />
-              </div>
-              Email
-            </a>
-          </div>
-        </section>
       </div>
       <StackSlider />
     </div>
