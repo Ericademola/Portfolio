@@ -1,6 +1,5 @@
 import { IWork } from "@/app/page";
-import ArrowWithTailNext from "@/public/ArrowWithTailNext";
-import ArrowWithTailPrev from "@/public/ArrowWithTailPrev";
+import { ArrowWithTailNext, ArrowWithTailPrev } from "@/public/Icons";
 import Image from 'next/image'
 import { useRef } from "react";
 
@@ -68,7 +67,7 @@ const Model = ({setIsShowModel, work}: {setIsShowModel: (value: boolean) => void
                             onClick={() => {
                             sideScroll(picWrapper.current, 25, 300, -40);
                             }}>
-                            <ArrowWithTailPrev/>
+                            <ArrowWithTailPrev />
                             </span>
                         }
                     <div className='flex gap-2 bg-white items-center rounded-[20px] py-2 px-[10px] m-auto'>
@@ -85,7 +84,7 @@ const Model = ({setIsShowModel, work}: {setIsShowModel: (value: boolean) => void
                             onClick={() => {
                                 sideScroll(picWrapper.current, 25, 300, +40);
                                 }}>
-                            <ArrowWithTailNext/>
+                            <ArrowWithTailNext />
                         </span>
                     } 
                     </div>

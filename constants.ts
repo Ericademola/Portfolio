@@ -65,7 +65,7 @@ export const works = [
       Library Services: Access to digital library resources, e-books, and research databases.
       Career Services: Job postings, resume builder, and career counselling resources. ( for university students)
       Community Forums: A space for students to discuss academic topics, share experiences, and form study groups. ( for university students )
-      Feedback and Survey Tools: Channels for students to provide feedback on courses, faculty, and services. 
+      Feedback and Survey Tools: Channels for students to provide feedback on courses, faculty, and services.  
     `,
     pictures: [akada1, akadahome, akada2],
     link: 'https://system.akada.africa',

@@ -1,15 +1,13 @@
 'use client'
 import Image, { StaticImageData } from 'next/image'
 import mypic from '../public/images/mypic.jpeg'
-import EmailIcon from '@/public/EmailIcon'
-import LinkedinIcon from '@/public/LinkedinIcon'
-import XIcon from '@/public/XIcon'
 import {reviews, works} from '../constants'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { use, useCallback, useEffect, useMemo, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import StackSlider from '@/components/StackSlider';
 import Model from '@/components/Model'
 import Nav from '@/components/Nav'
+import { EmailIcon, LinkedinIcon, XIcon } from '@/public/Icons'
 
 export interface IWork {
   image: StaticImageData
@@ -26,7 +24,8 @@ export default function Home() {
   const [typedWord, setTypedWord] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
-  const typingSpeed = 150; // milliseconds
+  const [mobile, setMobile] = useState<boolean | undefined>();
+  const typingSpeed = 150;
 
   const wordsToType = useMemo(() => [
     "Adeyemi Eric Ademola", 
@@ -42,13 +41,13 @@ export default function Home() {
         setTypedWord('');
         setCharIndex(0);
         setWordIndex(prev => prev + 1);
-      }, typingSpeed * 2); // A short pause before starting the next word
+      }, typingSpeed * 2);
     } else {
       setTimeout(() => {
         setTypedWord('');
         setCharIndex(0);
         setWordIndex(0);
-      }, typingSpeed * 2); // A short pause before restarting from the first word
+      }, typingSpeed * 2);
     }
   }, [wordIndex, charIndex, wordsToType]);
 
@@ -62,6 +61,12 @@ export default function Home() {
   const isMobile = useMediaQuery({
     query: "(min-width: 640px)",
   });
+
+  useEffect(() => {
+    if (isMobile) {
+      setMobile(isMobile);
+    }
+  }, [isMobile]);
 
   const handleProjectDetails = ({work}: {work: IWork}) => {
     setIsShowModel(true);
@@ -85,7 +90,8 @@ export default function Home() {
 
         <section className='pt-5 justify-around flex items-center' id="#connect">
           <div>
-            <a href='https://www.cakeresume.com/s--YVVLxMd653WV6--xgGjYHg--/ademola-adeyemi' className='m-auto px-5 py-4 border-4 text-2xl text-[white] font-semibold border-[#243c5a] rounded'>RESUME</a>
+            <a href='https://docs.google.com/document/d/1fYQR1V3ZiHF0sgxrq5OShiLa1XOmU0V2ZbpEjmRtKd8/edit?tab=t.0' className='m-auto px-5 py-4 border-4 text-2xl text-[white] font-semibold border-[#243c5a] rounded'>RESUME</a>
+            {/* <a href='https://www.cakeresume.com/s--YVVLxMd653WV6--xgGjYHg--/ademola-adeyemi' className='m-auto px-5 py-4 border-4 text-2xl text-[white] font-semibold border-[#243c5a] rounded'>RESUME</a> */}
           </div>
 
           <div className='p-5 flex gap-4 mt-2 text-[white]'>
@@ -95,7 +101,7 @@ export default function Home() {
             className='no-underline font-medium text-[14px]'
             >
               <div className='bg-white border-[2px] border-[blue] px-2 py-2 rounded-[5px] w-fit m-auto'>
-                <LinkedinIcon/>
+                <LinkedinIcon />
               </div>
               LinkedIn
             </a>
@@ -105,7 +111,7 @@ export default function Home() {
             className='no-underline font-medium text-[14px]'
             >
               <div className='bg-white border-[1px] px-2 py-2 rounded-[5px] w-fit  m-auto'>
-                <XIcon/>
+                <XIcon />
               </div>
               Twitter
             </a>
@@ -140,7 +146,7 @@ export default function Home() {
           </p>
         </div>
         <div className="animate-[moveDiagonally_5s_ease-in-out_infinite] order-1 md:order-2 h-fit w-fit m-auto">
-          <Image src="/images/cartondev.png" alt="" width={`${isMobile ? 500 : 300}`} height={100} />
+          <Image src="/images/cartondev.png" alt="" width={`${mobile ? 500 : 300}`} height={100} />
         </div>
       </div>
 
