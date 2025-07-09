@@ -288,7 +288,7 @@ export const ArrowWithTailNext = () => (
 )
 
 export const ArrowDownV = () => (
-        <svg
+    <svg
       width="19"
       height="18"
       viewBox="0 0 19 18"

@@ -74,8 +74,8 @@ export default function Home() {
   }
 
   return (
-  <main className='dark:bg-slate-800 relative overflow-x-hidden'>
-    <div className='min-h-[100vh] bg-[url(../public/images/nightsky.jpg)] flex justify-between flex-col'>
+  <main className='dark:bg-slate-800 relative overflow-x-hidden bg-[url(../public/images/nightsky.jpg)] no-repeat bg-cover h-full'>
+    <div className='min-h-[100vh] flex justify-between flex-col'>
       <Nav />
       <div>
 
@@ -139,7 +139,7 @@ export default function Home() {
       <StackSlider />
     </div>
 
-    <div className='min-h-[100vh] w-fit m-auto bg-[url(../public/images/nightsky.jpg)]'>
+    <div className='min-h-[100vh] w-fit m-auto'>
       <h1 className='text-[50px] md:text-[100px] lg:text-[125px] leanding-[10px] font-bold text-[white] pl-4'>ABOUT ME</h1>
       <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5 items-center w-fit m-auto px-[5%] md:px-[4%]">
         <div className="order-2 md:order-1 w-fit">
@@ -161,7 +161,7 @@ export default function Home() {
       </div>
 
     </div>
-    <div className='items-center pt-10 bg-[url(../public/images/nightsky.jpg)]' id="projects">
+    <div className='items-center pt-10' id="projects">
       <h2 className='text-center font-semibold text-[50px] text-[white]'>Projects</h2>
       <div className='gap-x-10 gap-y-6 mt-7 grid grid-cols-1 md:grid-cols-2'>
         { 
@@ -192,7 +192,7 @@ export default function Home() {
     </div>
 
 
-      <footer className='hn-[80vh] pt-[80px] bg-[url(../public/images/nightsky.jpg)]'>
+      <footer className='hn-[80vh] pt-[80px]'>
 
       <div className=' my-1s4 w-full flex justify-around'>
 
