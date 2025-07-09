@@ -139,7 +139,7 @@ export default function Home() {
       <StackSlider />
     </div>
 
-    <div className='min-h-[100vh] w-fit m-auto'>
+    <div className='min-h-[100vh] w-fit m-auto' id="about">
       <h1 className='text-[50px] md:text-[100px] lg:text-[125px] leanding-[10px] font-bold text-[white] pl-4'>ABOUT ME</h1>
       <div className="grid md:grid-cols-2 grid-cols-1 md:gap-5 items-center w-fit m-auto px-[5%] md:px-[4%]">
         <div className="order-2 md:order-1 w-fit">

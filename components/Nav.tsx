@@ -85,6 +85,9 @@ const Nav = () => {
           <a href="#projects" className="hover:underline">
             <h5>Projects</h5>
           </a>
+          <a href="#about" className="hover:underline">
+            <h5>About Me</h5>
+          </a>
         </div>
 
         {/* Mobile Toggle Button */}
@@ -109,6 +112,9 @@ const Nav = () => {
           </a>
           <a href="#projects" className="hover:underline">
             <h5>Projects</h5>
+          </a>
+          <a href="#about" className="hover:underline">
+            <h5>About Me</h5>
           </a>
         </div>
       )}
