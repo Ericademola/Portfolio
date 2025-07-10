@@ -77,10 +77,12 @@ export default function Home() {
   return (
   <main className='dark:bg-slate-800 relative overflow-x-hidden bg-[url(../public/images/nightsky.jpg)] no-repeat bg-cover h-full'>
     <div className='min-h-[100vh] flex justify-between flex-col'>
-      <Nav />
-      <div>
+      <div className='fixed top-0 left-0 w-full z-10 bg-[#243c5a]'>
+        <Nav />
+      </div>
+      <div >
 
-        <div className='flex flex-col-reverse md:flex-row justify-between items-center px-4 gap-6 md:gap-4'>
+        <div className='flex flex-col-reverse md:flex-row justify-between items-center px-4 gap-6 md:gap-4 mt-36'>
 
           <div className='w-full md:w-[50%]'>
             <div className='max-md:text-center'>
@@ -94,6 +96,7 @@ export default function Home() {
               <div>
                 <Link 
                 href='https://docs.google.com/document/d/1fYQR1V3ZiHF0sgxrq5OShiLa1XOmU0V2ZbpEjmRtKd8/edit?tab=t.0' 
+                target='_blank'
                 className='m-auto p-3 border-[2px] text-2xl text-[white] font-semibold border-[#243c5a] rounded-md'>
                   RESUME
                 </Link>

@@ -21,6 +21,7 @@ const Nav = () => {
           <Link
             href='https://docs.google.com/document/d/1fYQR1V3ZiHF0sgxrq5OShiLa1XOmU0V2ZbpEjmRtKd8/edit?tab=t.0'
             className="hover:underline"
+            target='_blank'
           >
             <h5>Resume</h5>
           </Link>
@@ -49,6 +50,7 @@ const Nav = () => {
           <a
             href="https://www.cakeresume.com/s--YVVLxMd653WV6--xgGjYHg--/ademola-adeyemi"
             className="hover:underline"
+            target='_blank'
           >
             <h5>Resume</h5>
           </a>

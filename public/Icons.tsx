@@ -289,8 +289,8 @@ export const ArrowWithTailNext = () => (
 
 export const ArrowDownV = () => (
     <svg
-      width="19"
-      height="18"
+      width="25"
+      height="24"
       viewBox="0 0 19 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -298,7 +298,7 @@ export const ArrowDownV = () => (
       <path
         d="M15.4396 6.71289L10.5496 11.6029C9.97207 12.1804 9.02707 12.1804 8.44957 11.6029L3.55957 6.71289"
         stroke="#fff"
-        strokeWidth="1.5"
+        strokeWidth="3.5"
         strokeMiterlimit="10"
         strokeLinecap="round"
         strokeLinejoin="round"
