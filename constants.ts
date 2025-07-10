@@ -118,14 +118,6 @@ export const works = [
     technologies: ['React', 'typescript']
   },
   {
-    image: paga,
-    project: 'Paga Website Redesign',
-    Description: 'Paga website redesign.',
-    pictures: [paga],
-    link: 'https://super-haupia-7b5270.netlify.app',
-    technologies: ['CSS', 'HTML', 'javascript']
-  },
-  {
     image: microsoft,
     project: 'Microsoft Cloning',
     Description: 'Microsoft webapp clone.',

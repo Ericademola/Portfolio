@@ -309,7 +309,8 @@ export const ArrowDownV = () => (
 export const XIcon = () => (
             <svg
             width="17px" 
-            height="17px" 
+            height="17px"
+            fill="#243c5a"
             xmlns="http://www.w3.org/2000/svg" 
             shapeRendering="geometricPrecision" 
             textRendering="geometricPrecision" 

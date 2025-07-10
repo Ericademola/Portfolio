@@ -2,12 +2,13 @@
 import Image, { StaticImageData } from 'next/image'
 import mypic from '../public/images/mypic.jpeg'
 import {reviews, works} from '../constants'
-import { use, useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import StackSlider from '@/components/StackSlider';
 import Model from '@/components/Model'
 import Nav from '@/components/Nav'
 import { EmailIcon, LinkedinIcon, XIcon } from '@/public/Icons'
+import Link from 'next/link'
 
 export interface IWork {
   image: StaticImageData
@@ -79,9 +80,9 @@ export default function Home() {
       <Nav />
       <div>
 
-        <div className='flex flex-col-reverse md:flex-row justify-between items-center'>
+        <div className='flex flex-col-reverse md:flex-row justify-between items-center px-4 gap-6 md:gap-4'>
 
-          <div className='w-full md:w-[50%] md:pl-4 pl-0 mt-12 md:mt-0'>
+          <div className='w-full md:w-[50%]'>
             <div className='max-md:text-center'>
               <h3 className='mb-2 font-extrabold text-[white]'>Hello there!, I'm</h3>
               <h1 className='text-[1.5rem] md:text-[2rem] lg:text-[4rem] font-bold text-[white]'>
@@ -91,39 +92,41 @@ export default function Home() {
             </div>
             <section className='pt-5 justify-around flex items-center' id="#connect">
               <div>
-                <a href='https://docs.google.com/document/d/1fYQR1V3ZiHF0sgxrq5OShiLa1XOmU0V2ZbpEjmRtKd8/edit?tab=t.0' className='m-auto px-5 py-4 border-4 text-2xl text-[white] font-semibold border-[#243c5a] rounded'>RESUME</a>
-                {/* <a href='https://www.cakeresume.com/s--YVVLxMd653WV6--xgGjYHg--/ademola-adeyemi' className='m-auto px-5 py-4 border-4 text-2xl text-[white] font-semibold border-[#243c5a] rounded'>RESUME</a> */}
+                <Link 
+                href='https://docs.google.com/document/d/1fYQR1V3ZiHF0sgxrq5OShiLa1XOmU0V2ZbpEjmRtKd8/edit?tab=t.0' 
+                className='m-auto p-3 border-[2px] text-2xl text-[white] font-semibold border-[#243c5a] rounded-md'>
+                  RESUME
+                </Link>
               </div>
 
               <div className='p-5 flex gap-4 mt-2 text-[white]'>
-                <a 
+                <Link 
                 href="https://www.linkedin.com/in/adeyemiademola/"
                 target='_blank' 
                 className='no-underline font-medium text-[14px]'
                 >
-                  <div className='bg-white border-[2px] border-[blue] px-2 py-2 rounded-[5px] w-fit m-auto'>
+                  <div className='border-[2px] border-[#243c5a] px-2 py-2 rounded-[5px] w-fit m-auto'>
                     <LinkedinIcon />
                   </div>
-                  LinkedIn
-                </a>
-                <a 
+                </Link>
+
+                <Link
                 href="https://twitter.com/Adeyemi50273182" 
                 target='_blank' 
                 className='no-underline font-medium text-[14px]'
                 >
-                  <div className='bg-white border-[1px] px-2 py-2 rounded-[5px] w-fit  m-auto'>
+                  <div className='border-[2px] px-2 py-2 rounded-[5px] w-fit border-[#243c5a] m-auto'>
                     <XIcon />
                   </div>
-                  Twitter
-                </a>
-                <a href="mailto:ademolaadeyemieric@gmail.com"
+                </Link>
+
+                <Link href="mailto:ademolaadeyemieric@gmail.com"
                 className='no-underline font-medium text-[14px]'
                 >
-                  <div className='bg-[#fff] border-[1px] border-[red] px-2 py-2 rounded-[5px] w-fit m-auto'>
+                  <div className='border-[2px] px-2 py-2 rounded-[5px] border-[#243c5a] w-fit m-auto'>
                     <EmailIcon />
                   </div>
-                  Email
-                </a>
+                </Link>
               </div>
             </section>
           </div>
@@ -159,24 +162,24 @@ export default function Home() {
           <Image src="/images/cartondev.png" alt="" width={`${mobile ? 500 : 300}`} height={100} />
         </div>
       </div>
-
     </div>
+
     <div className='items-center pt-10' id="projects">
       <h2 className='text-center font-semibold text-[50px] text-[white]'>Projects</h2>
-      <div className='gap-x-10 gap-y-6 mt-7 grid grid-cols-1 md:grid-cols-2'>
+      <div className='gap-x-10 gap-y-6 mt-7 grid grid-cols-1 md:grid-cols-2 px-[5%] md:px-[4%]'>
         { 
           works && works.map((work, i) =>  
           <div 
-            className='w-[95%] m-auto pointer-cursor hover:bg-gradient-to-b from-[rgba(225,200,0,0.1)] hover:w-full rounded-b-lg pointer-events-auto' 
+            className='w-full pointer-cursor hover:bg-gradient-to-b from-[rgba(225,200,0,0.1)] hover:w-full rounded-b-lg pointer-events-auto flex flex-col md:flex-row md:gap-2' 
             key={i}
           >
             <Image src={work.image} alt=''
               className='w-full min-w-[50%] h-[150px] rounded-lg hover:rounded-none object-contain cursor-pointer'
               onClick={() => handleProjectDetails({ work })}
             />
-            <div className='pl-1 '>
+            <div className='w-full'>
               <h3 className='text-[#000] dark:text-white'>{work.project}</h3>
-              <p className='text-[gray] leading-6' style={{ whiteSpace: "pre-line", lineHeight: "15px" }}>
+              <p className='text-[gray] leadingh-6' style={{ whiteSpace: "pre-line", lineHeight: "20px" }}>
                 {
                   work.Description.length > 100
                   ? work.Description.slice(0, 100) + "..."
@@ -191,12 +194,10 @@ export default function Home() {
       <hr className='border-[white] mt-[50px]'/>
     </div>
 
+    <footer className='hn-[80vh] pt-[80px]'>
 
-      <footer className='hn-[80vh] pt-[80px]'>
-
-      <div className=' my-1s4 w-full flex justify-around'>
-
-        <div className='w-2/3 leading-10 rounded-[20px] md:rounded-[25px] lg:rounded-[50px] text-center bg-[purple] py-4 px-4 md:py-8 md:px-8 lg:py-12 lg:px-14'>
+      <div className='w-full flex justify-around'>
+        <div className='mx-[5%] md:mx-[4%] md:w-2/3 leading-10 rounded-[20px] md:rounded-[25px] lg:rounded-[50px] text-center bg-[purple] py-4 px-4 md:py-8 md:px-8 lg:py-12 lg:px-14'>
           <Image src="/images/cartondev.png" alt="quote photo" width={100} height={100} className='rounded-full bg-slate-800 border border-[purple] m-auto mt-[-80px]' />
           <p className='text-sm leading-6'>
             {reviews[0].comment}
@@ -204,14 +205,13 @@ export default function Home() {
           <h1 className='text-lg font-semibold'>{reviews[0].name}</h1>
           <h1 className='text-lg font-semibold'>{reviews[0].organization}</h1>
         </div>
-
       </div>
               
-    <hr className='border-[white] my-5'/>
-      
-    <div className='text-center pb-4'>
-      <p className='text-[14px] font-medium text-[white]'>Made with &#128151; by Adeyemi using NextJs</p>
-    </div>
+      <hr className='border-[white] my-5'/>
+        
+      <div className='text-center pb-4'>
+        <p className='text-[14px] font-medium text-[white]'>Made with &#128151; by Adeyemi using NextJs</p>
+      </div>
     </footer>
 
     {
