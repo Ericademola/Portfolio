@@ -39,18 +39,11 @@ const Model = ({setIsShowModel, work}: {setIsShowModel: (value: boolean) => void
                     {work?.Description}
                     </p>
                 </div>
-                <p className='text-[black] pt-2'>
-                    Project link: <a href={work?.link as string} target="_blank" className='text-[blue]'>{work?.link}</a>
-                </p>
-                {/* <p className="text-gray-500">Technologies: 
-                    { 
-                        work && work?.technologies?.map((technology, i) =>
-                            <i  className='pl-2' key={i}>
-                                {technology}{i === work?.technologies.length - 1 ? '.' : ','}
-                            </i>
-                        )
-                    }
-                </p> */}
+                {work?.link && (
+                    <p className='text-[black] font-semibold text-xl pt-2'>
+                        Project link: <a href={work?.link as string} target="_blank" className='text-[blue]'>{work?.link}</a>
+                    </p>
+                )}
                 <div className='my-4'>
                     <h3 className='text-[black] font-semibold text-xl mb-2'>Technologies</h3>
                     <div className='flex gap-2 items-center'>
