@@ -26,6 +26,7 @@ export default function Home() {
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [mobile, setMobile] = useState<boolean | undefined>();
+  const [pageScrolled, setPageScrolled] = useState(false);
   const typingSpeed = 150;
 
   const wordsToType = useMemo(() => [
@@ -74,10 +75,28 @@ export default function Home() {
     setWork(work);
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 50) {
+        setPageScrolled(true);
+      } else {
+        setPageScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
+
+
   return (
   <main className='dark:bg-slate-800 relative overflow-x-hidden bg-[url(../public/images/nightsky.jpg)] no-repeat bg-cover h-full'>
     <div className='min-h-[100vh] flex justify-between flex-col'>
-      <div className='fixed top-0 left-0 w-full z-10 bg-[#243c5a]'>
+      <div className={`fixed top-0 left-0 w-full z-10 ${pageScrolled ? 'bg-[#243c5a]' : 'bg-transparent'}`}>
         <Nav />
       </div>
       <div >
