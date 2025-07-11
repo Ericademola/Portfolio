@@ -1,6 +1,7 @@
 import { IWork } from "@/app/page";
 import { ArrowWithTailNext, ArrowWithTailPrev } from "@/public/Icons";
 import Image from 'next/image'
+import Link from "next/link";
 import { useRef } from "react";
 
 const Model = ({setIsShowModel, work}: {setIsShowModel: (value: boolean) => void; work?: IWork}) => {
@@ -38,7 +39,7 @@ const Model = ({setIsShowModel, work}: {setIsShowModel: (value: boolean) => void
                     </p>
                 </div>
                 <p className='text-[black] pt-2'>
-                    Project link: <a href={work?.link} className='text-[blue]'>{work?.link}</a>
+                    Project link: <a href={work?.link as string} target="_blank" className='text-[blue]'>{work?.link}</a>
                 </p>
                 <p className="text-gray-500">Technologies: 
                     { 

@@ -9,7 +9,7 @@ import Model from '@/components/Model'
 import Nav from '@/components/Nav'
 import { EmailIcon, LinkedinIcon, XIcon } from '@/public/Icons'
 import Link from 'next/link'
-
+import { technologies } from '../constants'
 export interface IWork {
   image: StaticImageData
   project: string;
@@ -82,7 +82,7 @@ export default function Home() {
       </div>
       <div >
 
-        <div className='flex flex-col-reverse md:flex-row justify-between items-center px-4 gap-6 md:gap-4 mt-36'>
+        <div className='flex flex-col-reverse md:flex-row justify-between items-center px-4 gap-12 md:gap-4 mt-48'>
 
           <div className='w-full md:w-[50%]'>
             <div className='max-md:text-center'>
@@ -173,7 +173,7 @@ export default function Home() {
         { 
           works && works.map((work, i) =>  
           <div 
-            className='w-full pointer-cursor hover:bg-gradient-to-b from-[rgba(225,200,0,0.1)] hover:w-full rounded-b-lg pointer-events-auto flex flex-col md:flex-row md:gap-2' 
+            className='w-full pointer-cursor hover:bg-gradient-to-b from-[rgba(225,200,0,0.1)] hover:w-full rounded-b-lg pointer-events-auto flex flex-col md:flex-row gap-2' 
             key={i}
           >
             <Image src={work.image} alt=''
@@ -189,7 +189,30 @@ export default function Home() {
                   : work.Description
                 } 
               </p>
-              {work.link && <a href={`${work.link}`} target="_blank" rel="noopener noreferrer" className='text-[gray]'>Visit site</a>}
+
+              <div className='my-4'>
+                <h3 className='text-[#000] dark:text-white mb-2'>Technologies</h3>
+                <div className='flex gap-2 items-center'>
+                  {
+                    work.technologies && work.technologies.map((tech, i) =>
+                      <div key={i} className='flex gap-2 items-center'>
+                        {technologies.find(t => t.name === tech)?.logo && (
+                          <Link href={technologies.find(t => t.name === tech)?.website as string} target="_blank" rel="noopener noreferrer" className='text-[gray]'>
+                            <Image src={technologies.find(t => t.name === tech)?.logo} alt='' className='w-6 h-6' />
+                          </Link>
+                        )}
+                      </div>
+                    )
+                  }
+                </div>
+              </div>
+
+              {work.link && (
+                <>
+                  {/* <h3 className='text-[#000] dark:text-white'>Link</h3> */}
+                  <a href={`${work.link}`} target="_blank" rel="noopener noreferrer" className='text-white font-semibold'>Visit site</a>
+                </>
+              )}
             </div>
           </div> 
         )}

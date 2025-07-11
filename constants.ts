@@ -9,7 +9,6 @@ import shareAmLanding from './public/images/shareAmLanding.png'
 import AvayeStorefrontGrid from './public/images/AvayeStorefrontGrid.png'
 import airbnbHome from './public/images/airbnbHome.png'
 import airbnbPage from './public/images/airbnbPage.png'
-import paga from './public/images/paga.png'
 import akada1 from './public/images/akada1.png'
 import akada2 from './public/images/akada2.png'
 import akadahome from './public/images/akadahome.png'
@@ -34,6 +33,24 @@ import typescript_logo from './public/images/typescript_logo.png'
 import javascript_logo from './public/images/javascript_logo.png'
 import zustand_logo from './public/images/zustand_logo.jpeg'
 
+import css from './public/svg/css.svg'
+import html from './public/svg/html.svg'
+import git from './public/svg/git.svg'
+import github from './public/svg/github.svg'
+import angular from './public/svg/angular.svg'
+import react from './public/svg/react.svg'
+import bootstrap from './public/svg/bootstrap.svg'
+import nextjs from './public/svg/nextjs.svg'
+import PrimeReact from './public/svg/PrimeReact.svg'
+import typescript from './public/svg/typescript.svg'
+import ionicframework from './public/svg/ionicframework.svg'
+import tailwindcss from './public/svg/tailwindcss.svg'
+import Axios from './public/svg/Axios.svg'
+import shadcn_ui from './public/svg/shadcn-ui.svg'
+import Zustand from './public/svg/Zustand.svg'
+import react_query from './public/svg/react-query.svg'
+import javascript from './public/svg/javascript.svg'
+
 
 export const works = [
   {
@@ -49,8 +66,7 @@ export const works = [
     `,
     pictures: [AvayeStorefrontDetails, AvayeExplore, AvayeProfile, AvayeHomePage, AvayeDashboard, AvayeStorefrontGrid, AvayeStorefrontList],
     link: 'https://avaye.africa/',
-    // link: 'https://dev-avaye-site-ba8166f5a23f.herokuapp.com/',
-    technologies: ['nextJs', 'Axios', 'Ant Design', 'Tailwindcss', 'typescript', 'Zustand', 'Shadcn UI'],
+    technologies: ['NextJs', 'Axios', 'Tailwindcss', 'TypeScript', 'Zustand', 'Shadcn UI', "HTML", "CSS", "git", "javascript", "React Query", "gitHub"],
   },
   {
     image: akadahome,
@@ -69,7 +85,7 @@ export const works = [
     `,
     pictures: [akada1, akadahome, akada2],
     link: 'https://system.akada.africa',
-    technologies: ['Bootstrap', 'Axios', 'prime react', 'styled-components', 'typescript'],
+    technologies: ['Bootstrap', 'Axios', 'React', 'Prime React', 'styled-components', 'TypeScript', "HTML", "CSS", "git", "javascript", "gitHub"],
   },
   {
     image: PushItHome,
@@ -83,7 +99,7 @@ export const works = [
     `,
     pictures: [PushItHome, PushItContent, PushItCashier],
     link: 'https://www.poschoice.ng/',
-    technologies: ['React', 'Axios', 'prime react', 'styled-components', 'typescript']
+    technologies: ['React', 'Axios', 'Prime React', 'styled-components', 'TypeScript', "HTML", "CSS", "git", "javascript", "gitHub"]
   },
   {
     image: shareAmSignup,
@@ -91,7 +107,7 @@ export const works = [
     Description: 'A screen sharing app for effective coloboration.',
     pictures: [shareAmLanding, shareAmSignup],
     // link: 'https://moonlit-puffpuff-193974.netlify.app' 
-    technologies: ['electron', 'CSS', 'HTML', 'javascript']
+    technologies: ['electron', 'CSS', 'HTML', 'javascript', "git", "gitHub"]
   },
   {
     image: ClabboxHome,
@@ -99,7 +115,7 @@ export const works = [
     Description: 'A charity app that solve money and food donation.',
     pictures: [ClabboxHome],
     link: 'https://moonlit-puffpuff-193974.netlify.app',
-    technologies: ['Angular', 'Ionic', 'typescript']
+    technologies: ['Angular', 'Ionic', 'TypeScript', "HTML", "CSS", "git", "javascript", "gitHub"]
   },
   {
     image: kuditip3,
@@ -107,7 +123,7 @@ export const works = [
     Description: 'We building tipping service app for receiving gratification from supporters.',
     pictures: [kuditip3, kuditip1, kuditip],
     link: 'https://tipping-service.vercel.app/',
-    technologies: ['React', 'javascript']
+    technologies: ['React', "HTML", "CSS", "git", "javascript", "gitHub"]
   },
   {
     image: airbnbHome,
@@ -115,7 +131,7 @@ export const works = [
     Description: 'Airbnb webapp clone.',
     pictures: [airbnbHome, airbnbPage],
     link: 'https://airbnb-clone-sooty-two.vercel.app/',
-    technologies: ['React', 'typescript']
+    technologies: ['React', 'TypeScript', "HTML", "CSS", "git", "javascript", "gitHub"]
   },
   {
     image: microsoft,
@@ -123,7 +139,7 @@ export const works = [
     Description: 'Microsoft webapp clone.',
     pictures: [microsoft],
     // link: '#',
-    technologies: ['CSS', 'HTML', 'javascript']
+    technologies: ['CSS', 'HTML', "git", "javascript", "gitHub"]
   },
 ]
 
@@ -183,5 +199,93 @@ export const skills = [
   {
     logo: typescript_logo,
     name: "TYPESCRIPT"
+  },
+]
+
+export const technologies = [
+  {
+    logo: css,
+    name: "CSS",
+    website: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+  },
+  {
+    logo: html,
+    name: "HTML",
+    website: "https://developer.mozilla.org/en-US/docs/Web/HTML"
+  },
+  {
+    logo: git,
+    name: "git",
+    website: "https://git-scm.com/"
+  },
+  {
+    logo: github,
+    name: "gitHub",
+    website: "https://github.com/"
+  },
+  {
+    logo: angular,
+    name: "Angular",
+    website: "https://angular.dev/overview"
+  },
+  {
+    logo: react,
+    name: "React",
+    website: "https://react.dev/"
+  },
+  {
+    logo: bootstrap,
+    name: "Bootstrap",
+    website: "https://getbootstrap.com/"
+  },
+  {
+    logo: nextjs,
+    name: "NextJs",
+    website: "https://nextjs.org/"
+  },
+  {
+    logo: PrimeReact,
+    name: "Prime React",
+    website: "https://primereact.org/"
+  },
+  {
+    logo: typescript,
+    name: "TypeScript",
+    website: "https://www.typescriptlang.org/"
+  },
+  {
+    logo: ionicframework,
+    name: "Ionic",
+    website: "https://ionicframework.com/"
+  },
+  {
+    logo: tailwindcss,
+    name: "Tailwindcss",
+    website: "https://tailwindcss.com/"
+  },
+  {
+    logo: Axios,
+    name: "Axios",
+    website: "https://axios-http.com/docs/intro"
+  },
+  {
+    logo: Zustand,
+    name: "Zustand",
+    website: "https://zustand.docs.pmnd.rs/getting-started/introduction"
+  },
+  {
+    logo: shadcn_ui,
+    name: "Shadcn UI",
+    website: "https://ui.shadcn.com/"
+  },
+  {
+    logo: react_query,
+    name: "React Query",
+    website: "https://tanstack.com/query/v5/docs/framework/react/overview"
+  },
+  {
+    logo: javascript,
+    name: "javascript",
+    website: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
 ]
