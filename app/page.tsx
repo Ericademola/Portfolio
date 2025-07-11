@@ -96,7 +96,7 @@ export default function Home() {
   return (
   <main className='dark:bg-slate-800 relative overflow-x-hidden bg-[url(../public/images/nightsky.jpg)] no-repeat bg-cover h-full'>
     <div className='min-h-[100vh] flex justify-between flex-col'>
-      <div className={`fixed top-0 left-0 w-full z-10 ${pageScrolled ? 'bg-[#243c5a]' : 'bg-transparent'}`}>
+      <div className={`fixed top-0 left-0 w-full z-10 transition-colors duration-300 ${pageScrolled ? 'bg-[#243c5a]' : 'bg-transparent'}`}>
         <Nav />
       </div>
       <div >
@@ -188,11 +188,11 @@ export default function Home() {
 
     <div className='items-center pt-10' id="projects">
       <h2 className='text-center font-semibold text-[50px] text-[white]'>Projects</h2>
-      <div className='gap-x-10 gap-y-6 mt-7 grid grid-cols-1 md:grid-cols-2 px-[5%] md:px-[4%]'>
+      <div className='gap-x-10 gap-y-6 mt-7 grid grid-cols-1 md:grid-cols-2'>
         { 
           works && works.map((work, i) =>  
           <div 
-            className='w-full pointer-cursor hover:bg-gradient-to-b from-[rgba(225,200,0,0.1)] hover:w-full rounded-b-lg pointer-events-auto flex flex-col md:flex-row gap-2' 
+            className='w-full pointer-cursor hover:bg-gradient-to-b from-[rgba(225,200,0,0.1)] hover:w-full rounded-b-lg pointer-events-auto flex flex-col md:flex-row gap-2 px-[5%] md:px-[4%]' 
             key={i}
           >
             <Image src={work.image} alt=''

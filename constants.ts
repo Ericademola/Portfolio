@@ -50,6 +50,7 @@ import shadcn_ui from './public/svg/shadcn-ui.svg'
 import Zustand from './public/svg/Zustand.svg'
 import react_query from './public/svg/react-query.svg'
 import javascript from './public/svg/javascript.svg'
+import electronjs from './public/svg/electronjs.svg'
 
 
 export const works = [
@@ -107,7 +108,7 @@ export const works = [
     Description: 'A screen sharing app for effective coloboration.',
     pictures: [shareAmLanding, shareAmSignup],
     // link: 'https://moonlit-puffpuff-193974.netlify.app' 
-    technologies: ['electron', 'CSS', 'HTML', 'javascript', "git", "gitHub"]
+    technologies: ['Electron', 'CSS', 'HTML', 'javascript', "git", "gitHub"]
   },
   {
     image: ClabboxHome,
@@ -287,5 +288,10 @@ export const technologies = [
     logo: javascript,
     name: "javascript",
     website: "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  },
+  {
+    logo: electronjs,
+    name: "Electron",
+    website: "https://www.electronjs.org/"
   },
 ]
